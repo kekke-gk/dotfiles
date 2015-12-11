@@ -1,0 +1,94 @@
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
+
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+!-------------------------------------------------------------------------------
+! URxvt settings
+! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
+! More info at:
+! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
+!-------------------------------------------------------------------------------
+
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               0
+URxvt.loginShell:           true
+URxvt.saveLines:            10000
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+
+! Fonts
+URxvt.allow_bold:           true
+URxvt*font:                 xft:Ricty:size=12:antialiase=true
+URxvt*boldFont:             xft:Ricty:bold:size=12:antialiase=true
+
+! Fix font space
+URxvt*letterSpace: -1
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:     default,matcher,keyboard-select,url-select,clipboard,xim-onthespot,fullscreen
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          firefox
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+! disable iso mode
+URxvt.iso14755_52:          false
+URxvt*iso14755_52:          false
+URxvt.iso14755:          false
+URxvt*iso14755:          false
+
+! Input
+! URxvt*inputMethod:       fcitx
+URxvt*inputMethod:       uim
+URxvt*imLocale: en_US.UTF-8
+! URxvt*preeditType: OnTheSpot
+URxvt*preeditType: OverTheSpot
+
+! Full screen
+URxvt.keysym.F11: perl:fullscreen:switch
+
+!! Source http://github.com/altercation/solarized
+#include ".Xresources.d/solarized"
+
+!-------------------------------------------------------------------------------
+! https://github.com/muennich/urxvt-perls
+!-------------------------------------------------------------------------------
+!-------------------------------------------------------------------------------
+! カスタマイズ用のファイルの場所をフルパスで指定
+URxvt.perl-lib:/home/kekke/.urxvt/urxvt-perls/
+! キーボードセレクトモードを使う
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+! サーチモードを M-s に割り当てる
+URxvt.keysym.M-s: perl:keyboard-select:search
+! url セレクトモードを使う
+URxvt.keysym.M-u: perl:url-select:select_next
+! マウスの左クリックで url を開く (デフォルトは 2)
+URxvt.url-select.button:3
+! url は firefox の新しいタブで開く
+URxvt.url-select.launcher:firefox -new-tab
+! url にはアンダーラインをつける
+URxvt.url-select.underline:true
+! use xclip
+URxvt.clipboard.copycmd: xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+! クリップボードにキーバインドを割り当てる
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped 

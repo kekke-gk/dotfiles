@@ -1,4 +1,3 @@
-#
 # Mode
 # bindkey -v # vi
 bindkey -e # emacs
@@ -6,6 +5,7 @@ bindkey -e # emacs
 # Prompt
 PROMPT='[%n@%m]# '
 RPROMPT='[%d]'
+SPROMPT="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # home end delete
 bindkey "^[[H" beginning-of-line
@@ -20,12 +20,10 @@ setopt hist_ignore_dups
 setopt share_history
 setopt auto_pushd
 setopt pushd_ignore_dups
-
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-
 
 # Complement
 autoload -U compinit; compinit # 補完機能を有効にする
@@ -37,14 +35,6 @@ bindkey "^[[Z" reverse-menu-complete  # Shift-Tabで補完候補を逆順する(
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字小文字を区別しない
 compctl -M 'm:{a-z}={A-Z}'
 
-
-
-
-SPROMPT="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
-
-
-
- 
 # alias
 alias ls='ls -G --color=auto'
 alias ll='ls -All'
@@ -67,7 +57,17 @@ export PATH=$PATH:$GOPATH/bin
 
 # yaourt
 export VISUAL="vim"
+export EDITOR="vim"
+
 # enhancd
 if [ -f "/home/kekke/.enhancd/zsh/enhancd.zsh" ]; then
     source "/home/kekke/.enhancd/zsh/enhancd.zsh"
+fi
+
+if [ -f ~/.dircolors ]; then
+    if type dircolors > /dev/null 2>&1; then
+        eval $(dircolors ~/.dircolors)
+    elif type gdircolors > /dev/null 2>&1; then
+        eval $(gdircolors ~/.dircolors)
+    fi
 fi

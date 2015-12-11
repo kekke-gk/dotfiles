@@ -47,12 +47,12 @@ inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
+noremap  <C-s> <ESC>
+noremap! <C-s> <ESC>
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
 nnoremap # #zz
-noremap  <silent> ss <ESC>
-noremap! <silent> ss <ESC>
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j

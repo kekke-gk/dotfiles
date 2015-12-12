@@ -65,7 +65,8 @@ URxvt*preeditType: OverTheSpot
 URxvt.keysym.F11: perl:fullscreen:switch
 
 !! Source http://github.com/altercation/solarized
-#include ".Xresources.d/solarized"
+! #include ".Xresources.d/solarized"
+#include "Xresources.d/solarized"
 
 !-------------------------------------------------------------------------------
 ! https://github.com/muennich/urxvt-perls

@@ -3,6 +3,10 @@ set encoding=utf-8
 set fileencodings=utf-8,sjis,iso-2022-jp,euc-jp,cp932,utf-8
 set fileformat=unix
 set fileformats=unix,dos,mac
+set backup
+set backupdir=$HOME/.vim/backup
+set swapfile
+set directory=$HOME/.vim/swap
 
 " General
 set nocompatible

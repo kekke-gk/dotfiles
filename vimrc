@@ -22,7 +22,6 @@ set incsearch
 " Appearance
 set number
 set showcmd
-set showmode
 set showmatch
 set textwidth=0
 set novisualbell
@@ -61,6 +60,11 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
+"
+" PowerLine
+set laststatus=2
+set showtabline=1
+set noshowmode
 
 " NeoBundle
 if 0 | endif
@@ -79,6 +83,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'lilydjwg/colorizer'
+NeoBundle 'Lokaltog/vim-powerline'
 
 call neobundle#end()
 " Required:
@@ -89,7 +95,6 @@ NeoBundleCheck
 " syntax on
 syntax enable
 set background=dark
-colorscheme solarized
 
 " Solarized
 let g:solarized_termcolors=16
@@ -100,3 +105,5 @@ let g:solarized_underline=1
 let g:solarized_italic=1
 let g:solarized_contrast='normal'
 let g:solarized_visibility='normal'
+colorscheme solarized
+

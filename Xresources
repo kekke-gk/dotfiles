@@ -23,6 +23,7 @@ URxvt.loginShell:           true
 URxvt.saveLines:            10000
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
+URxvt*termName:             rxvt
 
 ! Fonts
 URxvt.allow_bold:           true
@@ -30,6 +31,8 @@ URxvt.allow_bold:           true
 ! URxvt*boldFont:             xft:Ricty:bold:size=12:antialiase=true
 URxvt*font:                 xft:Ubuntu Mono derivative Powerline:size=12:antialiase=true
 URxvt*boldFont:             xft:Ubuntu Mono derivative Powerline:bold:size=12:antialiase=true
+! URxvt*font:                 xft:Ricty for Powerline:size=12:antialiase=true
+! URxvt*boldFont:             xft:Ricty for Powerline:bold:size=12:antialiase=true
 
 ! Fix font space
 URxvt*letterSpace: -1

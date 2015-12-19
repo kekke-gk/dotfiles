@@ -60,8 +60,9 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
-"
+
 " PowerLine
+let g:Powerline_symbols='fancy'
 set laststatus=2
 set showtabline=1
 set noshowmode
@@ -84,7 +85,6 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'lilydjwg/colorizer'
-NeoBundle 'Lokaltog/vim-powerline'
 
 call neobundle#end()
 " Required:

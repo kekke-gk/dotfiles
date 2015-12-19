@@ -61,7 +61,7 @@ let g:nextlink_nositeinfo_act = "f"
 " qmarks
 "---------------------------------------------------
 qmark m https://mail.google.com/
-qmark w https://www.wrike.com
+qmark d https://i.doit.im/home/#/today
 qmark t http://ejje.weblio.jp/
 qmark p http://getpocket.com/a/queue
 qmark e https://www.evernote.com/Home.action

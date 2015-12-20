@@ -61,11 +61,19 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
-" PowerLine
-let g:Powerline_symbols='fancy'
+" Powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 set laststatus=2
 set showtabline=1
 set noshowmode
+let g:Powerline_symbols = 'fancy'
+set t_Co=256
+
+
+
+
 
 " NeoBundle
 if 0 | endif

@@ -93,6 +93,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'lilydjwg/colorizer'
+NeoBundle 'thinca/vim-quickrun'
 
 call neobundle#end()
 " Required:

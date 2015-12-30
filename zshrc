@@ -47,7 +47,7 @@ stty stop undef
 
 # alias
 alias ls='ls -G --color=auto'
-alias ll='ls -All'
+alias ll='ls -Al'
 alias la='ls -A'
 alias l='ls -CF'
 alias cp='cp -i'

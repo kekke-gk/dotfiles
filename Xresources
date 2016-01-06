@@ -76,7 +76,7 @@ URxvt.keysym.F11: perl:fullscreen:switch
 !-------------------------------------------------------------------------------
 !-------------------------------------------------------------------------------
 ! カスタマイズ用のファイルの場所をフルパスで指定
-URxvt.perl-lib:/home/kekke/.urxvt/urxvt-perls/
+! URxvt.perl-lib:/home/kekke/.urxvt/urxvt-perls/
 ! キーボードセレクトモードを使う
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 ! サーチモードを M-s に割り当てる

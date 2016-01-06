@@ -54,7 +54,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias vi='vim'
 alias xclip='xclip -sel clip'
-alias open='gnome-open'
+# alias open='gnome-open'
+alias open='xdg-open'
 alias view='vim -R'
 alias pstree="pstree -A"
 

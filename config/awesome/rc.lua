@@ -15,7 +15,6 @@ local beautiful = require("beautiful")
 local naughty   = require("naughty")
 local drop      = require("scratchdrop")
 local lain      = require("lain")
-local vicious   = require("vicious")
 -- }}}
 
 -- {{{ Error handling
@@ -57,7 +56,8 @@ run_once("nm-applet")
 -- {{{ Variable definitions
 
 -- beautiful init
-beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-darker/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/theme.lua.back")
 
 -- common
 modkey     = "Mod4"
@@ -102,11 +102,6 @@ if beautiful.wallpaper then
         gears.wallpaper.maximized(beautiful.wallpaper, s, true)
     end
 end
--- }}}
-
--- {{{ Menu
-mymainmenu = awful.menu.new({ items = require("menugen").build_menu(),
-                              theme = { height = 16, width = 130 }})
 -- }}}
 
 -- {{{ Wibox
@@ -208,9 +203,9 @@ baticon = wibox.widget.imagebox(beautiful.widget_battery)
 batwidget = lain.widgets.bat({
     settings = function()
         if bat_now.perc == "N/A" or bat_now.status == "Charging" then
-            -- widget:set_markup(" AC ")
+            widget:set_markup(" AC ")
             baticon:set_image(beautiful.widget_ac)
-            -- return
+            return
         elseif tonumber(bat_now.perc) <= 5 then
             baticon:set_image(beautiful.widget_battery_empty)
         elseif tonumber(bat_now.perc) <= 15 then
@@ -238,16 +233,6 @@ volumewidget = lain.widgets.alsa({
         end
 
         widget:set_text(" " .. volume_now.level .. "% ")
-    end
-})
-
--- Net
-neticon = wibox.widget.imagebox(beautiful.widget_net)
-neticon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn_with_shell(nmtui) end)))
-wifi = vicious.widgets.wifi("", "wlp4s0")
-netwidget = lain.widgets.net({
-    settings = function()
-        widget:set_markup(wifi["{ssid}"] .. " ")
     end
 })
 
@@ -337,38 +322,31 @@ for s = 1, screen.count() do
     left_layout:add(spr)
 
     -- Widgets that are aligned to the upper right
-    local right_layout_toggle = true
+    -- local right_layout_toggle = true
+    local right_layout_toggle = false
     local function right_layout_add (...)
         local arg = {...}
         if right_layout_toggle then
-            right_layout:add(arrl_ld)
+            -- right_layout:add(arrl_ld)
             for i, n in pairs(arg) do
                 right_layout:add(wibox.widget.background(n ,beautiful.bg_focus))
             end
         else
-            right_layout:add(arrl_dl)
+            -- right_layout:add(arrl_dl)
             for i, n in pairs(arg) do
                 right_layout:add(n)
             end
         end
-        right_layout_toggle = not right_layout_toggle
+        -- right_layout_toggle = not right_layout_toggle
     end
 
     right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(spr)
     -- right_layout:add(arrl)
-    -- right_layout_add(mpdicon, mpdwidget)
     right_layout_add(volicon, volumewidget)
-    --right_layout_add(mailicon, mailwidget)
-    -- right_layout_add(memicon, memwidget)
-    -- right_layout_add(cpuicon, cpuwidget)
-    -- right_layout_add(tempicon, tempwidget)
-    -- right_layout_add(fsicon, fswidget)
     right_layout_add(baticon, batwidget)
-    -- right_layout_add(neticon, netwidget)
     right_layout_add(mytextclock, spr)
-    -- right_layout_add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
@@ -382,7 +360,6 @@ end
 
 -- {{{ Mouse Bindings
 root.buttons(awful.util.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
@@ -423,12 +400,6 @@ globalkeys = awful.util.table.join(
         function()
             awful.client.focus.bydirection("right")
             if client.focus then client.focus:raise() end
-        end),
-
-    -- Show Menu
-    awful.key({ modkey }, "w",
-        function ()
-            mymainmenu:show({ keygrabber = true })
         end),
 
     -- Show/Hide Wibox

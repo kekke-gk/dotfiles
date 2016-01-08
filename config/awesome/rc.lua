@@ -57,7 +57,7 @@ run_once("nm-applet")
 
 -- beautiful init
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/theme.lua")
-beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/theme.lua.back")
+-- beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/theme.lua.back")
 
 -- common
 modkey     = "Mod4"
@@ -69,12 +69,9 @@ editor_cmd = terminal .. " -e " .. editor
 -- user defined
 browser    = "dwb"
 browser2   = "iron"
-gui_editor = "gvim"
-graphics   = "gimp"
-mail       = terminal .. " -e mutt "
-iptraf     = terminal .. " -g 180x54-20+34 -e sudo iptraf-ng -i all "
+gui_editor = "leafpad"
+graphics   = "viewnior"
 nmtui      = terminal .. " -e nmtui "
-musicplr   = terminal .. " -g 130x34-320+16 -e ncmpcpp "
 
 local layouts = {
     awful.layout.suit.floating,
@@ -88,7 +85,7 @@ local layouts = {
 -- {{{ Tags
 tags = {
    names = { "1", "2", "3", "4", "5"},
-   layout = { layouts[1], layouts[2], layouts[3], layouts[1], layouts[4] }
+   layout = { layouts[2], layouts[2], layouts[2], layouts[1], layouts[2] }
 }
 
 for s = 1, screen.count() do
@@ -110,8 +107,6 @@ separators = lain.util.separators
 
 -- Textclock
 clockicon = wibox.widget.imagebox(beautiful.widget_clock)
---mytextclock = awful.widget.textclock(" %a %d %b  %H:%M")
-
 mytextclock = lain.widgets.abase({
     timeout  = 60,
     cmd      = "date +'%a %d %b %R'",
@@ -123,89 +118,12 @@ mytextclock = lain.widgets.abase({
 -- calendar
 lain.widgets.calendar:attach(mytextclock, { font_size = 10 })
 
--- Mail IMAP check
-mailicon = wibox.widget.imagebox(beautiful.widget_mail)
-mailicon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn(mail) end)))
---[[ commented because it needs to be set before use
-mailwidget = lain.widgets.imap({
-    timeout  = 180,
-    server   = "server",
-    mail     = "mail",
-    password = "keyring get mail",
-    settings = function()
-        if mailcount > 0 then
-            widget:set_text(" " .. mailcount .. " ")
-            mailicon:set_image(beautiful.widget_mail_on)
-        else
-            widget:set_text("")
-            mailicon:set_image(beautiful.widget_mail)
-        end
-    end
-})
-]]
-
--- MPD
-mpdicon = wibox.widget.imagebox(beautiful.widget_music)
-mpdicon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn_with_shell(musicplr) end)))
-mpdwidget = lain.widgets.mpd({
-    settings = function()
-        if mpd_now.state == "play" then
-            artist = " " .. mpd_now.artist .. " "
-            title  = mpd_now.title  .. " "
-            mpdicon:set_image(beautiful.widget_music_on)
-        elseif mpd_now.state == "pause" then
-            artist = " mpd "
-            title  = "paused "
-        else
-            artist = ""
-            title  = ""
-            mpdicon:set_image(beautiful.widget_music)
-        end
-
-        widget:set_markup(markup("#EA6F81", artist) .. title)
-    end
-})
-
--- MEM
-memicon = wibox.widget.imagebox(beautiful.widget_mem)
-memwidget = lain.widgets.mem({
-    settings = function()
-        widget:set_text(" " .. mem_now.used .. "MB ")
-    end
-})
-
--- CPU
-cpuicon = wibox.widget.imagebox(beautiful.widget_cpu)
-cpuwidget = lain.widgets.cpu({
-    settings = function()
-        widget:set_text(" " .. cpu_now.usage .. "% ")
-    end
-})
-
--- Coretemp
-tempicon = wibox.widget.imagebox(beautiful.widget_temp)
-tempwidget = lain.widgets.temp({
-    settings = function()
-        widget:set_text(" " .. coretemp_now .. "°C ")
-    end
-})
-
--- / fs
-fsicon = wibox.widget.imagebox(beautiful.widget_hdd)
-fswidget = lain.widgets.fs({
-    settings  = function()
-        widget:set_text(" " .. fs_now.used .. "% ")
-    end
-})
-
 -- Battery
 baticon = wibox.widget.imagebox(beautiful.widget_battery)
 batwidget = lain.widgets.bat({
     settings = function()
         if bat_now.perc == "N/A" or bat_now.status == "Charging" then
-            widget:set_markup(" AC ")
             baticon:set_image(beautiful.widget_ac)
-            return
         elseif tonumber(bat_now.perc) <= 5 then
             baticon:set_image(beautiful.widget_battery_empty)
         elseif tonumber(bat_now.perc) <= 15 then
@@ -216,7 +134,6 @@ batwidget = lain.widgets.bat({
         widget:set_markup(" " .. bat_now.perc .. "% ")
     end
 })
--- baticon:buttons(awful.util.table.join(awful.button({ }, 1, function () batwidget.update() end)))
 
 -- ALSA volume
 volicon = wibox.widget.imagebox(beautiful.widget_vol)
@@ -231,8 +148,7 @@ volumewidget = lain.widgets.alsa({
         else
             volicon:set_image(beautiful.widget_vol)
         end
-
-        widget:set_text(" " .. volume_now.level .. "% ")
+        widget:set_text("" .. volume_now.level .. "% ")
     end
 })
 
@@ -311,7 +227,8 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s, height = 18 })
+    -- mywibox[s] = awful.wibox({ position = "top", screen = s, height = 18 })
+    mywibox[s] = awful.wibox({ position = "bottom", screen = s, height = 18 })
 
     -- Widgets that are aligned to the upper left
     local left_layout = wibox.layout.fixed.horizontal()
@@ -321,32 +238,15 @@ for s = 1, screen.count() do
     left_layout:add(mypromptbox[s])
     left_layout:add(spr)
 
-    -- Widgets that are aligned to the upper right
-    -- local right_layout_toggle = true
-    local right_layout_toggle = false
-    local function right_layout_add (...)
-        local arg = {...}
-        if right_layout_toggle then
-            -- right_layout:add(arrl_ld)
-            for i, n in pairs(arg) do
-                right_layout:add(wibox.widget.background(n ,beautiful.bg_focus))
-            end
-        else
-            -- right_layout:add(arrl_dl)
-            for i, n in pairs(arg) do
-                right_layout:add(n)
-            end
-        end
-        -- right_layout_toggle = not right_layout_toggle
-    end
-
-    right_layout = wibox.layout.fixed.horizontal()
+    local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(spr)
-    -- right_layout:add(arrl)
-    right_layout_add(volicon, volumewidget)
-    right_layout_add(baticon, batwidget)
-    right_layout_add(mytextclock, spr)
+    right_layout:add(volicon)
+    right_layout:add(volumewidget)
+    right_layout:add(baticon)
+    right_layout:add(batwidget)
+    right_layout:add(mytextclock)
+    right_layout:add(spr)
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
@@ -464,34 +364,7 @@ globalkeys = awful.util.table.join(
             os.execute(string.format("amixer set %s toggle", volumewidget.channel))
             volumewidget.update()
         end),
-    awful.key({ altkey, "Control" }, "m",
-        function ()
-            os.execute(string.format("amixer set %s 100%%", volumewidget.channel))
-            volumewidget.update()
-        end),
         
-    -- MPD control
-    awful.key({ altkey, "Control" }, "Up",
-        function ()
-            awful.util.spawn_with_shell("mpc toggle || ncmpc toggle || pms toggle")
-            mpdwidget.update()
-        end),
-    awful.key({ altkey, "Control" }, "Down",
-        function ()
-            awful.util.spawn_with_shell("mpc stop || ncmpc stop || pms stop")
-            mpdwidget.update()
-        end),
-    awful.key({ altkey, "Control" }, "Left",
-        function ()
-            awful.util.spawn_with_shell("mpc prev || ncmpc prev || pms prev")
-            mpdwidget.update()
-        end),
-    awful.key({ altkey, "Control" }, "Right",
-        function ()
-            awful.util.spawn_with_shell("mpc next || ncmpc next || pms next")
-            mpdwidget.update()
-        end),
-
     -- Copy to clipboard
     awful.key({ modkey }, "c", function () os.execute("xsel -p -o | xsel -i -b") end),
 

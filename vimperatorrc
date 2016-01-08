@@ -2,7 +2,7 @@ source! /home/kekke/.vimperatorrc.local
 
 " vim: set ft=vimperator:
 
-set titlestring = Firefox
+set titlestring=Firefox
 
 " 大文字小文字無視
 set ignorecase
@@ -55,7 +55,7 @@ set complete=Sl
 
 set nextpattern=^次(へ|の|ペ)?,^続き,ＮＥＸＴ,^Next,^next,^More,^more,^(>>*|»)
 set previouspattern=^前(へ|の|ペ)?,^戻る,ＢＡＣＫ,^Prev,^prev,^Previous,^previous,^(<<*|«)
-let g:nextlink_nositeinfo_act = "f"
+let g:nextlink_nositeinfo_act="f"
 
 "---------------------------------------------------
 " qmarks

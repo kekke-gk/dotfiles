@@ -116,7 +116,7 @@ mytextclock = lain.widgets.abase({
 })
 
 -- calendar
-lain.widgets.calendar:attach(mytextclock, { font_size = 10 })
+lain.widgets.calendar:attach(mytextclock, { font_size = 10, position = "bottom_right" })
 
 -- Battery
 baticon = wibox.widget.imagebox(beautiful.widget_battery)

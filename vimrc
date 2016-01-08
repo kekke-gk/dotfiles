@@ -56,10 +56,10 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
 nnoremap # #zz
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
 
 " Powerline
 python from powerline.vim import setup as powerline_setup
@@ -70,10 +70,6 @@ set showtabline=1
 set noshowmode
 let g:Powerline_symbols = 'fancy'
 set t_Co=256
-
-
-
-
 
 " NeoBundle
 if 0 | endif
@@ -99,6 +95,10 @@ call neobundle#end()
 " Required:
 filetype plugin indent on
 NeoBundleCheck
+
+" vim-quickrun
+let g:quickrun_config = {}
+let g:quickrun_config.c = { 'cmdopt' : '-lm' }
 
 " ColorScheme
 " syntax on

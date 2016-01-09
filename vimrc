@@ -13,7 +13,7 @@ set nocompatible
 set wildmenu
 set virtualedit=block
 
-" Search/
+" Search
 set smartcase
 set ignorecase
 set hlsearch

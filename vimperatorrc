@@ -62,12 +62,12 @@ let g:nextlink_nositeinfo_act="f"
 "---------------------------------------------------
 qmark m https://mail.google.com/
 qmark d https://i.doit.im/home/#/today
-qmark t http://ejje.weblio.jp/
+qmark w http://ejje.weblio.jp/
 qmark p http://getpocket.com/a/queue
 qmark e https://www.evernote.com/Home.action
-qmark l http://lifebear.com/top#calendar
 qmark s https://xythos.tokyo-ct.ac.jp/web/j/hp/index.html
 qmark o https://kosenjp-my.sharepoint.com/personal/s12083_tokyo_kosen-ac_jp/_layouts/15/start.aspx#/Documents/Forms/All.aspx
 qmark c https://www.chatwork.com/
+qmark l https://www.google.com/calendar/render?hl=ja
 
 echo "success"

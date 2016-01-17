@@ -1,4 +1,3 @@
-!-------------------------------------------------------------------------------
 ! Xft settings
 !-------------------------------------------------------------------------------
 
@@ -27,10 +26,14 @@ URxvt*termName:             rxvt
 
 ! Fonts
 URxvt.allow_bold:           true
-! URxvt*font:                 xft:Ricty:size=12:antialiase=true
-! URxvt*boldFont:             xft:Ricty:bold:size=12:antialiase=true
-URxvt*font:                 xft:Ubuntu Mono derivative Powerline:size=12:antialiase=true
-URxvt*boldFont:             xft:Ubuntu Mono derivative Powerline:bold:size=12:antialiase=true
+URxvt*font:                 xft:Ricty for Powerline:bold:size=12:antialias=true, \
+                            xft:Ubuntu Mono derivative Powerline:size=12:antialias=true
+URxvt*boldFont:             xft:Ricty for Powerline:bold:size=12:antialias=true, \
+                            xft:Ubuntu Mono derivative Powerline:bold:size=12:antialias=true
+! URxvt*font:                 xft:Ubuntu Mono derivative Powerline:size=12:antialias=true
+! URxvt*boldFont:             xft:Ubuntu Mono derivative Powerline:bold:size=12:antialias=true
+! URxvt*font:                 xft:TakaoGothic:size=12:antialias=true
+! URxvt*boldFont:             xft:TakaoGothic:bold:size=12:antialias=true
 
 ! Fix font space
 URxvt*letterSpace: -1
@@ -68,8 +71,8 @@ URxvt*preeditType: OverTheSpot
 URxvt.keysym.F11: perl:fullscreen:switch
 
 !! Source http://github.com/altercation/solarized
-! #include ".Xresources.d/solarized"
-#include "Xresources.d/solarized"
+#include ".Xresources.d/solarized"
+! #include "Xresources.d/solarized"
 
 !-------------------------------------------------------------------------------
 ! https://github.com/muennich/urxvt-perls

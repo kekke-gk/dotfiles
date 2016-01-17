@@ -65,6 +65,7 @@ export XMODIFIERS="@im=uim"
 
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
+export XDG_CONFIG_HOME=$HOME/.config
 export LANG=en_US.UTF-8
 # export LANG=ja_JP.UTF-8
 

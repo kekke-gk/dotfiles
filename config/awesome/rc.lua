@@ -85,7 +85,7 @@ local layouts = {
 -- {{{ Tags
 tags = {
    names = { "1", "2", "3", "4", "5"},
-   layout = { layouts[2], layouts[2], layouts[2], layouts[1], layouts[2] }
+   layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
 }
 
 for s = 1, screen.count() do
@@ -387,8 +387,8 @@ globalkeys = awful.util.table.join(
     -- Brightness
     awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 3") end),
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 3") end),
-    awful.key({ altkey, "Control" }, "Up", function () awful.util.spawn("xbacklight -inc 3") end),
-    awful.key({ altkey, "Control" }, "Down", function () awful.util.spawn("xbacklight -dec 3") end)
+    awful.key({ altkey, "Control" }, "Up", function () awful.util.spawn("xbacklight -inc 1") end),
+    awful.key({ altkey, "Control" }, "Down", function () awful.util.spawn("xbacklight -dec 1") end)
 )
 
 clientkeys = awful.util.table.join(

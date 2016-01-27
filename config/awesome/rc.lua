@@ -5,6 +5,11 @@
                                              
 --]]
 
+-- {{{ Bar height
+local wibox_height = 15
+local titlebar_height = 14
+-- }}}
+
 -- {{{ Required libraries
 local gears     = require("gears")
 local awful     = require("awful")
@@ -228,7 +233,8 @@ for s = 1, screen.count() do
 
     -- Create the wibox
     -- mywibox[s] = awful.wibox({ position = "top", screen = s, height = 18 })
-    mywibox[s] = awful.wibox({ position = "bottom", screen = s, height = 18 })
+    -- mywibox[s] = awful.wibox({ position = "bottom", screen = s, height = 18 })
+    mywibox[s] = awful.wibox({ position = "bottom", screen = s, height = wibox_height })
 
     -- Widgets that are aligned to the upper left
     local left_layout = wibox.layout.fixed.horizontal()
@@ -239,6 +245,7 @@ for s = 1, screen.count() do
     left_layout:add(spr)
 
     local right_layout = wibox.layout.fixed.horizontal()
+    right_layout:add(spr)
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(spr)
     right_layout:add(volicon)
@@ -552,7 +559,7 @@ client.connect_signal("manage", function (c, startup)
         layout:set_right(right_layout)
         layout:set_middle(middle_layout)
 
-        awful.titlebar(c,{size=16}):set_widget(layout)
+        awful.titlebar(c,{size=titlebar_height}):set_widget(layout)
     end
 end)
 

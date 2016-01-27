@@ -67,7 +67,7 @@ theme.mouse_finder_color = theme.colors.green
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_height = "15"
+theme.menu_height = "10"
 theme.menu_width  = "100"
 -- }}}
 

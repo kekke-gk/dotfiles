@@ -1,9 +1,7 @@
 source! /home/kekke/.vimperatorrc.local
 
-" vim: set ft=vimperator:
-
+" タイトルをFirefoxに
 set titlestring=Firefox
-
 " 大文字小文字無視
 set ignorecase
 " 入力欄に自動フォーカスしない
@@ -11,13 +9,10 @@ set focuscontent
 " ビジュアルベルを表示しない
 set visualbell
 highlight Bell display:none
-" :oなどでの補完候補をサーチエンジン、履歴に限定
-"set complete=sl
 " Hintモードでアルファベット使用
-"set hintchars=jfnvurhgytbkdmcielsxoe
 set hintchars=aoeuhtns
 " ツールバーはアドオンとタブのみ表示
-"set gui=addons,nobookmarks,nomenu,nonavigation,tas
+set gui=noaddons,nobookmarks,nomenu,navigation
 " commandモードでIMEオフ
 style! -name=commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 " google検索を手早くする
@@ -43,7 +38,7 @@ hi ErrorMsg color:white; background-color: #ec6aa1;
 " h 履歴
 " l ロケーションバー(ブックマーク、履歴)
 " S 検索サジェスト
-set complete=Sl
+set complete=Sbl
 
 " キーマップ
 " nmap ノーマルモード
@@ -52,6 +47,19 @@ set complete=Sl
 " cmap コマンドモード
 " omap オペレータ待機モード
 " mapでなくnoremap使う
+
+"ステータスバー
+hi StatusLine           color: #d1d8be; background: #543f24; font-size: 15px;
+"安全でないウェブページにおけるステータスバー
+hi StatusLineBroken     color: black; background: #FF6060; font-size: 15px; /* light-red */
+"安全なウェブページにおけるステータスバー
+hi StatusLineSecure     color: black; background: #B0FF00; font-size: 15px; /* light-green */
+hi StatusLineExtended   font-size: 15px;
+
+hi StatusLine height: 15px; -moz-appearance: statusbar;
+hi StatusLineSecure height: 15px; -moz-appearance: statusbar;
+hi StatusLineBroken height: 15px; -moz-appearance: statusbar;
+hi StatusLineExtended height: 15px; -moz-appearance: statusbar;
 
 set nextpattern=^次(へ|の|ペ)?,^続き,ＮＥＸＴ,^Next,^next,^More,^more,^(>>*|»)
 set previouspattern=^前(へ|の|ペ)?,^戻る,ＢＡＣＫ,^Prev,^prev,^Previous,^previous,^(<<*|«)

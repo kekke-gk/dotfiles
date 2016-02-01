@@ -26,9 +26,8 @@ URxvt*termName:             rxvt
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt*font:                 xft:Ricty for Powerline:bold:size=12:antialias=true
-URxvt*boldFont:             xft:Ricty for Powerline:bold:size=12:antialias=true
-                            xft:Ubuntu Mono derivative Powerline:bold:size=12:antialias=true
+URxvt*font:                 xft:Ricty:size=12:antialias=true
+URxvt*boldFont:             xft:Ricty:bold:size=12:antialias=true
 ! URxvt*font:                 xft:Ubuntu Mono derivative Powerline:size=12:antialias=true
 ! URxvt*boldFont:             xft:Ubuntu Mono derivative Powerline:bold:size=12:antialias=true
 ! URxvt*font:                 xft:TakaoGothic:size=12:antialias=true

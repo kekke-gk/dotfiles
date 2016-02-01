@@ -42,6 +42,10 @@ nnoremap q; q:
 nnoremap : ;
 nnoremap <TAB> %
 vnoremap <TAB> %
+nnoremap <D-h> <C-w><
+nnoremap <D-j> <C-w>+
+nnoremap <D-k> <C-w>-
+nnoremap <D-l> <C-w>>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k

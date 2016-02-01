@@ -33,7 +33,7 @@ theme.colors.green   = "#859900ff"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "Terminus 9"
+theme.font      = "Ricty 10.5"
 
 -- {{{ Colors
 theme.fg_normal  = theme.colors.base02

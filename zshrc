@@ -46,7 +46,7 @@ setopt ignore_eof
 stty stop undef
 
 # alias
-alias ls='ls -G --color=auto'
+alias ls='ls --color=auto'
 alias ll='ls -Al'
 alias la='ls -A'
 alias l='ls -CF'

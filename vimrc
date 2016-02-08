@@ -64,6 +64,7 @@ noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
+cnoremap w!! w !sudo tee > /dev/null %<CR> :e!<CR>
 
 " NeoBundle
 if 0 | endif

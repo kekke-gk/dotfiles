@@ -65,6 +65,7 @@ noremap k gk
 noremap gj j
 noremap gk k
 cnoremap w!! w !sudo tee > /dev/null %<CR> :e!<CR>
+autocmd BufWritePre * :%s/\s\+$//e
 
 " NeoBundle
 if 0 | endif

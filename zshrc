@@ -3,7 +3,7 @@
 bindkey -e # emacs
 
 # Prompt
-PROMPT='[%n@%m]# '
+PROMPT='[%n@%m]$ '
 RPROMPT='[%d]'
 SPROMPT="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 

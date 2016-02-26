@@ -1,8 +1,8 @@
 --[[
-                                             
-     Powerarrow Darker Awesome WM config 2.0 
-     github.com/copycat-killer               
-                                             
+
+     Powerarrow Darker Awesome WM config 2.0
+     github.com/copycat-killer
+
 --]]
 
 -- {{{ Bar height
@@ -137,7 +137,8 @@ batwidget = lain.widgets.bat({
             baticon:set_image(beautiful.widget_battery)
         end
         widget:set_markup(" " .. bat_now.perc .. "% ")
-    end
+    end,
+    battery = "BAT1"
 })
 
 -- ALSA volume
@@ -371,7 +372,7 @@ globalkeys = awful.util.table.join(
             os.execute(string.format("amixer set %s toggle", volumewidget.channel))
             volumewidget.update()
         end),
-        
+
     -- Copy to clipboard
     awful.key({ modkey }, "c", function () os.execute("xsel -p -o | xsel -i -b") end),
 

@@ -68,12 +68,12 @@ beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/theme.lua")
 modkey     = "Mod4"
 altkey     = "Mod1"
 terminal   = "urxvtc" or "xterm"
-editor     = os.getenv("EDITOR") or "nano" or "vi"
+editor     = os.getenv("EDITOR") or "vim" or "vi" or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
 -- user defined
-browser    = "dwb"
-browser2   = "iron"
+browser    = "firefox"
+browser2   = "google-chrome-stable"
 gui_editor = "leafpad"
 graphics   = "viewnior"
 nmtui      = terminal .. " -e nmtui "
@@ -89,8 +89,8 @@ local layouts = {
 
 -- {{{ Tags
 tags = {
-   names = { "1", "2", "3", "4", "5"},
-   layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
+   names = { 1, 2, 3, 4, 5, 6, 7, 8 },
+   layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
 }
 
 for s = 1, screen.count() do
@@ -233,8 +233,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    -- mywibox[s] = awful.wibox({ position = "top", screen = s, height = 18 })
-    -- mywibox[s] = awful.wibox({ position = "bottom", screen = s, height = 18 })
+    -- mywibox[s] = awful.wibox({ position = "top", screen = s, height = wibox_height })
     mywibox[s] = awful.wibox({ position = "bottom", screen = s, height = wibox_height })
 
     -- Widgets that are aligned to the upper left
@@ -377,10 +376,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "c", function () os.execute("xsel -p -o | xsel -i -b") end),
 
     -- User programs
-    awful.key({ modkey }, "q", function () awful.util.spawn(browser) end),
-    awful.key({ modkey }, "i", function () awful.util.spawn(browser2) end),
-    awful.key({ modkey }, "s", function () awful.util.spawn(gui_editor) end),
-    awful.key({ modkey }, "g", function () awful.util.spawn(graphics) end),
+    -- awful.key({ modkey }, "q", function () awful.util.spawn(browser) end),
+    -- awful.key({ modkey }, "i", function () awful.util.spawn(browser2) end),
+    -- awful.key({ modkey }, "s", function () awful.util.spawn(gui_editor) end),
+    -- awful.key({ modkey }, "g", function () awful.util.spawn(graphics) end),
 
     -- Prompt
     awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
@@ -482,28 +481,17 @@ awful.rules.rules = {
                      focus = awful.client.focus.filter,
                      keys = clientkeys,
                      buttons = clientbuttons,
-	                   size_hints_honor = false } },
+                     size_hints_honor = true } },
+
     { rule = { class = "URxvt" },
           properties = { opacity = 0.99 } },
 
-    { rule = { class = "MPlayer" },
-          properties = { floating = true } },
-
-    { rule = { class = "Dwb" },
+    { rule = { class = browser },
           properties = { tag = tags[1][1] } },
 
-    { rule = { class = "Iron" },
-          properties = { tag = tags[1][1] } },
+    { rule = { class = browser2 },
+          properties = { tag = tags[1][8] } },
 
-    { rule = { instance = "plugin-container" },
-          properties = { tag = tags[1][1] } },
-
-	  { rule = { class = "Gimp" },
-     	    properties = { tag = tags[1][4] } },
-
-    { rule = { class = "Gimp", role = "gimp-image-window" },
-          properties = { maximized_horizontal = true,
-                         maximized_vertical = true } },
 }
 -- }}}
 

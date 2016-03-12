@@ -3,15 +3,20 @@ set encoding=utf-8
 set fileencodings=utf-8,sjis,iso-2022-jp,euc-jp,cp932,utf-8
 set fileformat=unix
 set fileformats=unix,dos,mac
-set backup
-set backupdir=$HOME/.vim/backup
+set nobackup
+" set backupdir=$HOME/.vim/backup
 set swapfile
 set directory=$HOME/.vim/swap
 
 " General
 set nocompatible
 set wildmenu
+set modeline
 set virtualedit=block
+set backspace=indent,eol,start
+set hidden
+set infercase
+set scrolloff=8
 
 " Search
 set smartcase
@@ -23,18 +28,21 @@ set incsearch
 set number
 set showcmd
 set showmatch
+set matchpairs+=<:>
 set textwidth=0
 set novisualbell
 set vb t_vb=
+set cursorline
+set listchars=tab:▸\ ,trail:-,extends:»,precedes:«,nbsp:%
 
 " Indent
 set expandtab
 set autoindent
 set smarttab
 set shiftround
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 " KeyBind
 nnoremap ; :
@@ -42,10 +50,6 @@ nnoremap q; q:
 nnoremap : ;
 nnoremap <TAB> %
 vnoremap <TAB> %
-nnoremap <D-h> <C-w><
-nnoremap <D-j> <C-w>+
-nnoremap <D-k> <C-w>-
-nnoremap <D-l> <C-w>>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -95,12 +99,12 @@ call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 
+
 " vim-quickrun
 let g:quickrun_config = {}
 let g:quickrun_config.c = { 'cmdopt' : '-lm' }
 
 " ColorScheme
-" syntax on
 syntax enable
 set background=dark
 
@@ -211,3 +215,7 @@ let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif

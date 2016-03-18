@@ -276,7 +276,10 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     -- Take a screenshot
     -- https://github.com/copycat-killer/dots/blob/master/bin/screenshot
-    awful.key({ altkey }, "p", function() os.execute("screenshot") end),
+    awful.key({ modkey }, "p", function() os.execute("scrot '%Y%m%d_%H%M%S_$wx$h.png' -e 'mv $f ~/Dropbox/Photos/screenShotOnKenjaro/'") end),
+    awful.key({ }, "Print", function() os.execute("scrot '%Y%m%d_%H%M%S_$wx$h.png' -e 'mv $f ~/Dropbox/Photos/screenShotOnKenjaro/'") end),
+    awful.key({ modkey, altkey }, "p", function() os.execute("scrot '%Y%m%d_%H%M%S_$wx$h.png' --focused -e 'mv $f ~/Dropbox/Photos/screenShotOnKenjaro/'") end),
+    awful.key({ altkey }, "Print", function() os.execute("scrot '%Y%m%d_%H%M%S_$wx$h.png' --focused -e 'mv $f ~/Dropbox/Photos/screenShotOnKenjaro/'") end),
 
     -- Tag browsing
     awful.key({ modkey }, "Left",   awful.tag.viewprev       ),
@@ -481,7 +484,8 @@ awful.rules.rules = {
                      focus = awful.client.focus.filter,
                      keys = clientkeys,
                      buttons = clientbuttons,
-                     size_hints_honor = true } },
+                     -- size_hints_honor = true } },
+                     size_hints_honor = false } },
 
     { rule = { class = "URxvt" },
           properties = { opacity = 0.99 } },

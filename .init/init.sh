@@ -18,8 +18,5 @@ chsh -s $(which zsh)
 sudo ln -s ~/.dotfiles/.init/aoeu /usr/local/bin/
 sudo ln -s ~/.dotfiles/.init/asdf /usr/local/bin/
 
-# Uim
-ln -sf ~/.dotfiles/.init/uim/* ~/.uim.d/customs
-
 # Mozc
 /usr/lib/mozc/mozc_tool --mode=config_dialog

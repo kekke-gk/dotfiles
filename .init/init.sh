@@ -15,8 +15,8 @@ python ./archPkgInstall.py
 chsh -s $(which zsh)
 
 # Dvorak
-sudo ln -s ~/.dotfiles/.init/aoeu /usr/local/bin/
-sudo ln -s ~/.dotfiles/.init/asdf /usr/local/bin/
+ln -s ~/.dotfiles/.init/aoeu /usr/local/bin/
+ln -s ~/.dotfiles/.init/asdf /usr/local/bin/
 
 # Mozc
 /usr/lib/mozc/mozc_tool --mode=config_dialog

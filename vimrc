@@ -208,11 +208,25 @@ else
     call dein#add('itchyny/lightline.vim')
     call dein#add('Shougo/neocomplcache.vim')
     call dein#add('Shougo/unite.vim')
+    call dein#add('tpope/vim-surround')
 
-    call dein#add('mattn/emmet-vim')
-    call dein#add('othree/html5.vim')
-    call dein#add('hail2u/vim-css3-syntax')
-    call dein#add('jelera/vim-javascript-syntax')
+    " HTML / CSS / JS
+    call dein#add('mattn/emmet-vim', {'on_ft': ['html', 'css']})
+    call dein#add('othree/html5.vim', {'on_ft': 'html'})
+    call dein#add('hail2u/vim-css3-syntax', {'on_ft': 'css'})
+    call dein#add('jelera/vim-javascript-syntax', {'on_ft': 'javascript'})
+
+    " Ruby
+    call dein#add('tpope/vim-endwise', {'on_ft': 'ruby'})
+
+    " Rails
+    " call dein#add('tpope/vim-rails')
+
+    " Processing
+    call dein#add('sophacles/vim-processing', {'on_ft': 'processing'})
+
+    " Python
+    call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
 
     call dein#end()
     call dein#save_state()
@@ -254,6 +268,10 @@ endif
 
 let g:quickrun_config = {}
 let g:quickrun_config.c = { 'cmdopt' : '-lm' }
+" let g:quickrun_config.processing = {
+"             \ 'command': 'processing-java',
+"             \ 'exec': '%c --force --sketch=$PWD/ --output=/tmp/Processing --run ',
+"             \ }
 
 
 "---------------------------------------------------------------------------

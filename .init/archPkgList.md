@@ -47,11 +47,26 @@ gcc-multilib
 ### Java
 jdk8-openjdk
 
+### Android
+libmtp
+gvfs-mtp
+gvfs-gphoto2
+android-sdk
+android-sdk-platform-tools
+android-sdk-build-tools
+android-studio
+
 ### Python
 python-pip
 ipython
 lapack
 gcc-fortran
+
+### Ruby
+ruby
+
+### Processing
+processing
 
 ## Video / Audio / Picture / 3D
 gimp

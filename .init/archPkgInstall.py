@@ -2,7 +2,7 @@
 
 from subprocess import call
 
-YAOURT = 'yaourt --noconfirm -Syy '
+YAOURT = 'yaourt --noconfirm -Syyua '
 
 def is_pkg_name(s):
     return not(s == '' or s == '\n' or s[0] == '#')

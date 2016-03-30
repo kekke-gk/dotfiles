@@ -29,6 +29,7 @@ tmux
 
 ## Font
 ttf-ricty
+ttf-ubuntu-font-family
 
 ## Text Editor
 leafpad
@@ -58,7 +59,6 @@ android-studio
 
 ### Python
 python-pip
-ipython
 lapack
 gcc-fortran
 
@@ -130,7 +130,6 @@ skype
 
 ###### BitTorrent
 ###### Sublime
-###### bless hex editor
 ###### Wireshark
 ###### BurpSuite
 ###### XMind

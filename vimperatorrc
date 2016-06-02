@@ -1,4 +1,4 @@
-source! /home/kekke/.vimperatorrc.local
+"vim: set filetype=vim:
 
 " タイトルをFirefoxに
 set titlestring=Firefox
@@ -21,8 +21,11 @@ noremap s :tabopen<Space>google<Space>
 " ;と:を入れ替え
 noremap ; :
 noremap : ;
-noremap j 8j
-noremap k 8k
+noremap f F
+noremap F f
+
+noremap h <C-p>
+noremap l <C-n>
 
 " デフォルトのヒント派手すぎ＞＜
 hi Hint font-family: Arial; font-size: 21px; font-weight: bold; text-shadow: -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black, 1px 1px 2px black; color: #33cccc;
@@ -68,6 +71,17 @@ set previouspattern=^前(へ|の|ペ)?,^戻る,ＢＡＣＫ,^Prev,^prev,^Previou
 let g:nextlink_nositeinfo_act="f"
 
 "---------------------------------------------------
+" vimppm
+"---------------------------------------------------
+source ~/.vimperator/vimppm/plugin/vimppm.js
+
+vimppm '_smooziee.js'
+
+" smooziee.js
+let g:smooziee_scroll_amount = "150"
+let g:smooziee_scroll_interval = "5"
+
+"---------------------------------------------------
 " qmarks
 "---------------------------------------------------
 qmark m https://mail.google.com/
@@ -79,5 +93,6 @@ qmark s https://xythos.tokyo-ct.ac.jp/web/j/hp/index.html
 qmark o https://kosenjp-my.sharepoint.com/personal/s12083_tokyo_kosen-ac_jp/_layouts/15/start.aspx#/Documents/Forms/All.aspx
 qmark c https://www.chatwork.com/
 qmark l https://www.google.com/calendar/render?hl=ja
+qmark a https://amazon.co.jp
 
 echo "success"

@@ -1,6 +1,7 @@
 ## Web Browser
 google-chrome
 chromium
+vivaldi
 firefox
 firefox-i18n-ja
 
@@ -40,10 +41,12 @@ haroopad
 git
 tig
 virtualbox
+linux_headers
 vagrant
 
 ### C
 gcc-multilib
+gdb
 
 ### Java
 jdk8-openjdk
@@ -124,9 +127,37 @@ rcm
 curl
 xclip
 scrot
+networkmanager
+network-manager-applet
+xorg-xev
+zip
+unzip
+p7zip
+net-tools
 
 ## Message
 skype
+
+avahi
+nss-mdns
+
+alsa-plugins
+alsa-utils
+lib32-alsa-plugins
+
+pulseaudio
+pulseaudio-alsa
+pulseaudio-ctl
+lib32-libpulse
+lib32-libcanberra-pulse
+
+dosfstools
+
+openssh
+
+nfs-utils
+
+tlp
 
 ###### BitTorrent
 ###### Sublime

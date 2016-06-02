@@ -24,14 +24,14 @@ URxvt*termName:             rxvt
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt*font:                 xft:Ricty:size=12:antialias=true, \
-                            xft:Ubuntu Mono:size=12:antialias=true
-URxvt*boldFont:             xft:Ricty:bold:size=12:antialias=true, \
-                            xft:Ubuntu Mono:bold:size=12:antialias=true
-URxvt*italicFont:           xft:Ricty:italic:size=12:antialias=true, \
-                            xft:Ubuntu Mono:italic:size=12:antialias=true
-URxvt*bolditalicFont:       xft:Ricty:bold:italic:size=12:antialias=true, \
-                            xft:Ubuntu Mono:bold:italic:size=12:antialias=true
+URxvt*font:                 xft:Ricty:size=10.5:antialias=true, \
+                            xft:Ubuntu Mono:size=10.5:antialias=true
+URxvt*boldFont:             xft:Ricty:bold:size=10.5:antialias=true, \
+                            xft:Ubuntu Mono:bold:size=10.5:antialias=true
+URxvt*italicFont:           xft:Ricty:italic:size=10.5:antialias=true, \
+                            xft:Ubuntu Mono:italic:size=10.5:antialias=true
+URxvt*bolditalicFont:       xft:Ricty:bold:italic:size=10.5:antialias=true, \
+                            xft:Ubuntu Mono:bold:italic:size=10.5:antialias=true
 
 ! Fix font space
 URxvt*letterSpace: -1
@@ -69,8 +69,8 @@ URxvt*preeditType:          OverTheSpot
 ! URxvt.keysym.F11:           perl:fullscreen:switch
 
 ! Source http://ethanschoonover.com/solarized
-#include ".Xresources.d/solarized"
-! #include "Xresources.d/solarized"
+! #include ".Xresources.d/solarized-dark"
+#include ".Xresources.d/solarized-light"
 
 !-------------------------------------------------------------------------------
 ! https://github.com/muennich/urxvt-perls

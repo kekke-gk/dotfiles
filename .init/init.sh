@@ -9,7 +9,7 @@ repo='
 SigLevel = Never
 Server = http://repo.archlinux.fr/$arch'
 echo "$repo" >> /etc/pacman.conf
-pacman --noconfirm -Syy python yaourt
+pacman --noconfirm -Syy python yaourt gvim gcc-multilib
 
 # Arch Linux
 ./archPkgInstall.py
@@ -17,13 +17,16 @@ pacman --noconfirm -Syy python yaourt
 # Zsh
 su -l kekke -c 'chsh -s $(which zsh)'
 
+# Git
+./git.sh
+
 # Dein.vim
 mkdir -p ~/.vim/dein
 curl -L https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | bash -s ~/.vim/dein
 
 # Dvorak
-ln -s ~/.dotfiles/.init/aoeu /usr/local/bin/
-ln -s ~/.dotfiles/.init/asdf /usr/local/bin/
+cp ~/.dotfiles/.init/aoeu /usr/local/bin/
+cp ~/.dotfiles/.init/asdf /usr/local/bin/
 
 # Nemo
 ./nemo.sh
@@ -36,3 +39,6 @@ ln -s ~/.dotfiles/.init/asdf /usr/local/bin/
 
 # Mozc
 /usr/lib/mozc/mozc_tool --mode=config_dialog
+
+# Chrome
+cp ~/.dotfiles/.init/line /usr/local/bin

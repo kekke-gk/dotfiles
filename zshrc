@@ -58,6 +58,7 @@ alias xclip='xclip -sel clip'
 alias open='xdg-open'
 alias view='vim -R'
 alias pstree="pstree -A"
+alias tmux="TERM=screen-256color-bce tmux"
 
 export GTK_IM_MODULE=uim
 export QT_IM_MODULE=uim

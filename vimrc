@@ -29,6 +29,7 @@ set scrolloff=8
 set splitbelow
 set splitright
 set secure
+set clipboard=unnamed,autoselect,unnamedplus
 
 
 "---------------------------------------------------------------------------
@@ -78,7 +79,6 @@ set softtabstop=4
 " Exchange of ; for :
 nnoremap q; q:
 nnoremap ; :
-" nnoremap ; q:i
 nnoremap : ;
 
 " Move to pair by <TAB>
@@ -98,8 +98,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Move cursor on Insert Mode
-inoremap <C-k> <Up>
-inoremap <C-j> <Down>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-a> <Home>
@@ -132,6 +130,8 @@ cnoremap w!! w !sudo tee > /dev/null %<CR> :e!<CR>
 cnoremap bin %!xxd -g 1
 cnoremap binr %!xxd -r
 
+" Display multiple candidates on splited window
+nnoremap <C-]> :sp<CR> :exe("tjump ".expand('<cword>'))<CR>
 
 "---------------------------------------------------------------------------
 " Autocmd
@@ -155,99 +155,65 @@ augroup END
 autocmd BufWritePre * :%s/\s\+$//e
 
 
-"---------------------------------------------------------------------------
-" NeoBundle or Dein.vim
+"-----------------------------------------------------------------------
+" Dein.vim
 "
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+call dein#begin(expand('~/.cache/dein'))
 
-let s:useNeoBundle = 0
-if s:useNeoBundle
-    "-----------------------------------------------------------------------
-    " NeoBundle
-    "
-    if 0 | endif
-    if has('vim_starting')
-        set runtimepath+=~/.vim/bundle/neobundle.vim/
-    endif
-    call neobundle#begin(expand('~/.vim/bundle/'))
-    NeoBundleFetch 'Shougo/neobundle.vim'
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+call dein#add('Shougo/vimfiler.vim')
+call dein#add('tomtom/tcomment_vim')
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('lilydjwg/colorizer')
+call dein#add('thinca/vim-quickrun')
+call dein#add('itchyny/lightline.vim')
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/neoinclude.vim')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/neomru.vim')
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
+" call dein#add('tpope/vim-surround')
+call dein#add('Townk/vim-autoclose')
 
-    NeoBundle 'scrooloose/nerdtree'
-    NeoBundle 'tomtom/tcomment_vim'
-    NeoBundle 'altercation/vim-colors-solarized'
-    NeoBundle 'lilydjwg/colorizer'
-    NeoBundle 'thinca/vim-quickrun'
-    NeoBundle 'itchyny/lightline.vim'
-    NeoBundle 'Shougo/neocomplcache.vim'
-    NeoBundle 'Shougo/unite.vim'
+" C / C++
+call dein#add('justmao945/vim-clang', {'on_ft': ['c', 'cpp']})
 
-    NeoBundle 'tpope/vim-surround'
+" HTML / CSS / JS
+call dein#add('mattn/emmet-vim', {'on_ft': ['html', 'css']})
+call dein#add('othree/html5.vim', {'on_ft': 'html'})
+call dein#add('hail2u/vim-css3-syntax', {'on_ft': 'css'})
+call dein#add('jelera/vim-javascript-syntax', {'on_ft': 'javascript'})
 
-    NeoBundle 'mattn/emmet-vim'
-    NeoBundle 'othree/html5.vim'
-    NeoBundle 'hail2u/vim-css3-syntax'
-    NeoBundle 'jelera/vim-javascript-syntax'
+" Ruby
+call dein#add('tpope/vim-endwise', {'on_ft': 'ruby'})
+call dein#add('marcus/rsense', {'on_ft': 'ruby'})
+call dein#add('Shougo/neocomplcache-rsense.vim', {'on_ft': 'ruby'})
 
-    call neobundle#end()
-    filetype plugin indent on
-    NeoBundleCheck
-else
-    "-----------------------------------------------------------------------
-    " Dein.vim
-    "
-    set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
-    call dein#begin(expand('~/.cache/dein'))
+" Rails
+" call dein#add('tpope/vim-rails')
 
-    call dein#add('Shougo/dein.vim')
-    " call dein#add('Shougo/vimproc.vim', {
-    "             \ 'build': {
-    "             \     'linux': 'make',
-    "             \     'unix': 'gmake',
-    "             \     'windows': 'tools\\update-dll-mingw',
-    "             \     'cygwin': 'make -f make_cygwin.mak',
-    "             \     'mac': 'make -f make_mac.mak',
-    "             \    },
-    "             \ })
-    call dein#add('scrooloose/nerdtree')
-    call dein#add('tomtom/tcomment_vim')
-    call dein#add('altercation/vim-colors-solarized')
-    call dein#add('lilydjwg/colorizer')
-    call dein#add('thinca/vim-quickrun')
-    call dein#add('itchyny/lightline.vim')
-    " call dein#add('Shougo/neocomplcache.vim')
-    call dein#add('Shougo/neocomplete.vim')
-    call dein#add('Shougo/unite.vim')
-    " call dein#add('tpope/vim-surround')
-    call dein#add('Townk/vim-autoclose')
+" Processing
+call dein#add('sophacles/vim-processing', {'on_ft': 'processing'})
 
-    " HTML / CSS / JS
-    call dein#add('mattn/emmet-vim', {'on_ft': ['html', 'css']})
-    call dein#add('othree/html5.vim', {'on_ft': 'html'})
-    call dein#add('hail2u/vim-css3-syntax', {'on_ft': 'css'})
-    call dein#add('jelera/vim-javascript-syntax', {'on_ft': 'javascript'})
+" Python
+" call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
+" call dein#add('kevinw/pyflakes-vim', {'on_ft': 'python'})
+" call dein#add('nvie/vim-flake8', {'on_ft': 'python'})
 
-    " Ruby
-    call dein#add('tpope/vim-endwise', {'on_ft': 'ruby'})
+" LaTeX
+" call dein#add('vim-latex/vim-latex', {'on_ft': 'tex'})
 
-    " Rails
-    " call dein#add('tpope/vim-rails')
+call dein#end()
+call dein#save_state()
 
-    " Processing
-    call dein#add('sophacles/vim-processing', {'on_ft': 'processing'})
-
-    " Python
-    " call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
-    " call dein#add('kevinw/pyflakes-vim', {'on_ft': 'python'})
-    " call dein#add('nvie/vim-flake8', {'on_ft': 'python'})
-
-    call dein#end()
-    call dein#save_state()
-
-    if has('vim_starting') && dein#check_install()
-        call dein#install()
-    endif
-
-    filetype plugin indent on
+if has('vim_starting') && dein#check_install()
+    call dein#install()
 endif
+
+filetype plugin indent on
 
 
 "---------------------------------------------------------------------------
@@ -297,6 +263,53 @@ set noshowmode
 let g:lightline = {
             \ 'colorscheme': 'solarized',
             \ }
+
+
+"---------------------------------------------------------------------------
+" vim-clang
+"
+
+let g:clang_c_options = '-std=c11'
+let g:clang_cpp_options = '-std=c++14'
+
+
+"---------------------------------------------------------------------------
+" RSense
+"
+
+let g:rsenseUseOmniFunc = 1
+
+
+"---------------------------------------------------------------------------
+" VimFiler
+"
+
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_safe_mode_by_default = 0
+
+
+"---------------------------------------------------------------------------
+" Neosnippet
+"
+
+let g:neosnippet#snippets_directory='~/.vim/snippets'
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 
 "---------------------------------------------------------------------------

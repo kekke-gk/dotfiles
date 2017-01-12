@@ -121,7 +121,7 @@ mytextclock = lain.widgets.abase({
 })
 
 -- calendar
-lain.widgets.calendar:attach(mytextclock, { font_size = 10, position = "bottom_right" })
+-- lain.widgets.calendar:attach(mytextclock, { font_size = 10, position = "bottom_right" })
 
 -- Battery
 baticon = wibox.widget.imagebox(beautiful.widget_battery)
@@ -344,6 +344,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r",      awesome.restart),
     awful.key({ modkey, "Shift"   }, "q",      awesome.quit),
+    awful.key({ modkey, "Shift"   }, "Left",   function(c) awful.screen.focus(1) end),
+    awful.key({ modkey, "Shift"   }, "Right",  function(c) awful.screen.focus(2) end),
 
     -- Dropdown terminal
     awful.key({ modkey,	          }, "z",      function () drop(terminal) end),
@@ -398,7 +400,9 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 3") end),
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 3") end),
     awful.key({ altkey, "Control" }, "Up", function () awful.util.spawn("xbacklight -inc 1") end),
-    awful.key({ altkey, "Control" }, "Down", function () awful.util.spawn("xbacklight -dec 1") end)
+    awful.key({ altkey, "Control" }, "Down", function () awful.util.spawn("xbacklight -dec 1") end),
+    awful.key({ altkey, "Control", "Shift" }, "Up", function () awful.util.spawn("xbacklight -inc 10") end),
+    awful.key({ altkey, "Control", "Shift" }, "Down", function () awful.util.spawn("xbacklight -dec 10") end)
 )
 
 clientkeys = awful.util.table.join(

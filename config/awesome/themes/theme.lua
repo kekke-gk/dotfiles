@@ -12,7 +12,7 @@ theme.default_themes_path = "/usr/share/awesome/themes"
 -- theme.wallpaper_cmd = { "awsetbg "..theme.default_themes_path.."/zenburn/zenburn-background.png" }
 themes_dir                          = os.getenv("HOME") .. "/.config/awesome/themes"
 -- theme.wallpaper                     = themes_dir .. "/archSolarizedWallpaper.png"
-theme.wallpaper                     = themes_dir .. "/archSolarizedWallpaper.svg"
+theme.wallpaper                     = themes_dir .. "/archSolarizedWallpaper2.svg"
 theme.colors = {}
 theme.colors.base3   = "#002b36ff"
 theme.colors.base2   = "#073642ff"
@@ -131,5 +131,7 @@ theme.widget_vol                    = themes_dir .. "/icons/vol.png"
 theme.widget_vol_low                = themes_dir .. "/icons/vol_low.png"
 theme.widget_vol_no                 = themes_dir .. "/icons/vol_no.png"
 theme.widget_vol_mute               = themes_dir .. "/icons/vol_mute.png"
+
+theme.useless_gap_width = 10
 
 return theme

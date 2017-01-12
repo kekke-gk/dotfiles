@@ -1,2 +1,7 @@
 /etc/systemd/logind.conf
 /etc/X11/xorg.conf.d/50-synaptics.conf
+
+sudo memo
+Defaults visiblepw, path_info, insults, lecture=always
+Defaults visiblepw, path_info, insults, lecture=once
+Defaults visiblepw, path_info, insults, lecture=never

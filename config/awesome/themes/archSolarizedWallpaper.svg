@@ -16,8 +16,8 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="archSolarizedWallpaper.svg"
-   inkscape:export-filename="/home/kekke/Desktop/archSolarizedWallpaper.png"
+   sodipodi:docname="archSolarizedWallpaper2.svg"
+   inkscape:export-filename="/home/kekke/.config/awesome/themes/archSolarizedWallpaper2.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -171,17 +171,17 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="652.14286"
+     inkscape:cx="289.28572"
      inkscape:cy="291.42857"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer1-1"
      showgrid="false"
      units="px"
-     inkscape:window-width="1366"
-     inkscape:window-height="734"
+     inkscape:window-width="1362"
+     inkscape:window-height="735"
      inkscape:window-x="0"
-     inkscape:window-y="18"
-     inkscape:window-maximized="0" />
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -190,7 +190,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -236,7 +236,7 @@
          inkscape:connector-curvature="0"
          transform="matrix(1.9004525,0,0,1.9004525,-457.20039,-1072.4596)" />
       <path
-         style="fill:#7d8c93;fill-opacity:1"
+         style="fill:#fdf6e3;fill-opacity:1"
          d="m 660.57942,-162.39637 c 0,-0.30697 9.05176,-16.9093 20.11504,-36.8941 36.41454,-65.77961 74.20102,-136.35892 92.09875,-172.02624 9.68729,-19.30521 17.81848,-35.35379 18.06932,-35.66351 0.25084,-0.3097 4.80406,2.38718 10.11828,5.99307 12.48493,8.47148 41.99638,23.41034 41.99638,21.25881 0,-0.32385 -4.2905,-3.79833 -9.53444,-7.72105 -11.17606,-8.36026 -35.23593,-31.27267 -35.23593,-33.55548 0,-0.86705 2.75065,-7.63975 6.11255,-15.05045 3.36189,-7.41069 12.96845,-30.12939 21.34788,-50.48599 l 15.23536,-37.01201 10.4174,24.57579 c 26.60619,62.76694 66.35918,144.05745 110.04657,225.0332 8.80307,16.31672 15.68782,29.98455 15.29944,30.37294 -0.38841,0.38838 -4.3247,-1.11972 -8.74734,-3.35136 -9.16748,-4.62585 -35.17598,-13.5246 -36.28557,-12.415 -0.40497,0.40496 2.42662,2.49044 6.29237,4.63441 11.07219,6.14074 29.14828,18.62157 42.45611,29.31431 11.64522,9.35681 12.89266,11.06289 26.82061,36.68197 8.0341,14.77783 14.2504,26.86877 13.8141,26.86877 -0.4364,0 -9.7003,-4.89857 -20.5866,-10.88571 -39.92652,-21.95855 -75.37606,-37.2478 -103.56227,-44.66601 -10.08661,-2.65466 -14.74624,-4.62838 -14.37669,-6.08968 1.46819,-5.80566 0.59663,-34.7681 -1.28866,-42.82277 -5.17789,-22.12187 -18.84469,-40.7985 -32.66227,-44.63524 -8.51737,-2.36501 -10.22725,-2.24067 -17.99884,1.30902 -20.4681,9.34885 -31.61528,34.88001 -30.32745,69.46105 l 0.6954,18.6731 -6.74008,1.68363 c -18.54085,4.6314 -42.1259,12.88984 -62.28848,21.8107 -20.61082,9.11919 -63.3796,31.23921 -67.07262,34.69 -1.54114,1.44002 -4.22832,2.02078 -4.22832,0.91383 z"
          id="path4404"
          inkscape:connector-curvature="0" />

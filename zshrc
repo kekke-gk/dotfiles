@@ -60,24 +60,21 @@ alias view='vim -R'
 alias pstree="pstree -A"
 alias tmux="TERM=screen-256color-bce tmux"
 
+g+() { g++ -o "${1%.*}" "$1"; }
+
 export GTK_IM_MODULE=uim
 export QT_IM_MODULE=uim
 export XMODIFIERS="@im=uim"
 
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:$GOPATH/bin
+PATH+=:"$(ruby -e 'print Gem.user_dir')/bin"
+export PATH
 export XDG_CONFIG_HOME=$HOME/.config
 export LANG=en_US.UTF-8
 # export LANG=ja_JP.UTF-8
 
 # yaourt
-export VISUAL="vim"
-export EDITOR="vim"
-
-# enhancd
-if [ -f "/home/kekke/.enhancd/zsh/enhancd.zsh" ]; then
-    source "/home/kekke/.enhancd/zsh/enhancd.zsh"
-fi
+export VISUAL=vim
+export EDITOR=vim
 
 if [ -f ~/.dircolors ]; then
     if type dircolors > /dev/null 2>&1; then

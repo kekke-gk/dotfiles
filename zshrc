@@ -8,8 +8,8 @@ RPROMPT='[%d]'
 SPROMPT="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # home end delete
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
+bindkey "^[[H"  beginning-of-line
+bindkey "^[[F"  end-of-line
 bindkey "^[[3~" delete-char
 
 # History
@@ -60,11 +60,15 @@ alias view='vim -R'
 alias pstree="pstree -A"
 alias tmux="TERM=screen-256color-bce tmux"
 
-g+() { g++ -o "${1%.*}" "$1"; }
+g+() { g++ -o "${1%.*}.out" "$1"; }
+gc() { gcc -o "${1%.*}.out" "$1"; }
 
 export GTK_IM_MODULE=uim
 export QT_IM_MODULE=uim
 export XMODIFIERS="@im=uim"
+# export GTK_IM_MODULE=ibus
+# export QT_IM_MODULE=ibus
+# export XMODIFIERS="@im=ibus"
 
 PATH+=:"$(ruby -e 'print Gem.user_dir')/bin"
 export PATH
@@ -75,6 +79,9 @@ export LANG=en_US.UTF-8
 # yaourt
 export VISUAL=vim
 export EDITOR=vim
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export CLASSPATH=""
 
 if [ -f ~/.dircolors ]; then
     if type dircolors > /dev/null 2>&1; then
@@ -87,3 +94,5 @@ fi
 if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
+
+export UNIV=~/Dropbox/school/UEC/3/Kouki

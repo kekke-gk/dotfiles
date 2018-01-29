@@ -111,21 +111,21 @@ markup = lain.util.markup
 separators = lain.util.separators
 
 -- Textclock
-clockicon = wibox.widget.imagebox(beautiful.widget_clock)
-mytextclock = lain.widgets.abase({
-    timeout  = 60,
-    cmd      = "date +'%a %d %b %R'",
-    settings = function()
-        widget:set_text(" " .. output)
-    end
-})
+-- clockicon = wibox.widget.imagebox(beautiful.widget_clock)
+-- mytextclock = lain.widget.abase({
+--     timeout  = 60,
+--     cmd      = "date +'%a %d %b %R'",
+--     settings = function()
+--         widget:set_text(" " .. output)
+--     end
+-- })
 
 -- calendar
 -- lain.widgets.calendar:attach(mytextclock, { font_size = 10, position = "bottom_right" })
 
 -- Battery
 baticon = wibox.widget.imagebox(beautiful.widget_battery)
-batwidget = lain.widgets.bat({
+batwidget = lain.widget.bat({
     settings = function()
         if bat_now.perc == "N/A" or bat_now.status == "Charging" then
             baticon:set_image(beautiful.widget_ac)
@@ -143,7 +143,7 @@ batwidget = lain.widgets.bat({
 
 -- ALSA volume
 volicon = wibox.widget.imagebox(beautiful.widget_vol)
-volumewidget = lain.widgets.alsa({
+volumewidget = lain.widget.alsa({
     settings = function()
         if volume_now.status == "off" then
             volicon:set_image(beautiful.widget_vol_mute)
@@ -249,10 +249,10 @@ for s = 1, screen.count() do
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(spr)
     right_layout:add(volicon)
-    right_layout:add(volumewidget)
+    -- right_layout:add(volumewidget)
     right_layout:add(baticon)
-    right_layout:add(batwidget)
-    right_layout:add(mytextclock)
+    -- right_layout:add(batwidget)
+    -- right_layout:add(mytextclock)
     right_layout:add(spr)
 
     -- Now bring it all together (with the tasklist in the middle)
@@ -387,7 +387,8 @@ globalkeys = awful.util.table.join(
     -- awful.key({ modkey }, "g", function () awful.util.spawn(graphics) end),
 
     -- Prompt
-    awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
+    -- awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey }, "r", function () mypromptbox[1]:run() end),
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run({ prompt = "Run Lua code: " },

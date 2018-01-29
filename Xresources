@@ -24,14 +24,11 @@ URxvt*termName:             rxvt
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt*font:                 xft:Ricty:                      size=10.5:antialias=true, \
-                            xft:Ubuntu Mono:                size=10.5:antialias=true
-URxvt*boldFont:             xft:Ricty:          bold:       size=10.5:antialias=true, \
-                            xft:Ubuntu Mono:    bold:       size=10.5:antialias=true
-URxvt*italicFont:           xft:Ricty:          italic:     size=10.5:antialias=true, \
-                            xft:Ubuntu Mono:    italic:     size=10.5:antialias=true
-URxvt*bolditalicFont:       xft:Ricty:          bold:italic:size=10.5:antialias=true, \
-                            xft:Ubuntu Mono:    bold:italic:size=10.5:antialias=true
+URxvt*font:                 xft:Ricty:                      size=10.5:antialias=true
+URxvt*boldFont:             xft:Ricty:          bold:       size=10.5:antialias=true
+URxvt*italicFont:           xft:Ricty:          italic:     size=10.5:antialias=true
+URxvt*bolditalicFont:       xft:Ricty:          bold:italic:size=10.5:antialias=true
+
 
 ! Fix font space
 URxvt*letterSpace: -1
@@ -43,7 +40,7 @@ URxvt.scrollBar:            false
 ! Perl extensions
 URxvt.perl-ext-common:      default,matcher,keyboard-select,url-select,clipboard,xim-onthespot,fullscreen
 URxvt.matcher.button:       1
-URxvt.urlLauncher:          firefox
+URxvt.urlLauncher:          google-chrome-stable
 
 ! Cursor
 URxvt.cursorBlink:          true
@@ -63,36 +60,33 @@ URxvt*inputMethod:          uim
 ! URxvt*inputMethod:          fcitx
 URxvt*imLocale:             en_US.UTF-8
 URxvt*preeditType:          OverTheSpot
-! URxvt*preeditType:          OnTheSpot
-
-! Full screen
-! URxvt.keysym.F11:           perl:fullscreen:switch
 
 ! Source http://ethanschoonover.com/solarized
 ! #include ".Xresources.d/solarized-dark"
 #include ".Xresources.d/solarized-light"
 
+! URxvt*shading:              20
+! URxvt*inheritPixmap:        True
+
 !-------------------------------------------------------------------------------
 ! https://github.com/muennich/urxvt-perls
 !-------------------------------------------------------------------------------
-! カスタマイズ用のファイルの場所をフルパスで指定
-! URxvt.perl-lib:/home/kekke/.urxvt/urxvt-perls/
+
 ! キーボードセレクトモードを使う
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 ! サーチモードを M-s に割り当てる
 URxvt.keysym.M-s:           perl:keyboard-select:search
 ! url セレクトモードを使う
 URxvt.keysym.M-u:           perl:url-select:select_next
-! マウスの左クリックで url を開く (デフォルトは 2)
+! マウスの左クリックで url を開く
 URxvt.url-select.button:    3
 ! url は firefox の新しいタブで開く
-URxvt.url-select.launcher:  firefox -new-tab
+URxvt.url-select.launcher:  google-chrome-stable -new-tab
 ! url にはアンダーラインをつける
 URxvt.url-select.underline: true
 ! use xclip
 URxvt.clipboard.copycmd:    xclip -i -selection clipboard
 URxvt.clipboard.pastecmd:   xclip -o -selection clipboard
 ! クリップボードにキーバインドを割り当てる
-URxvt.keysym.M-c:           perl:clipboard:copy
-URxvt.keysym.M-v:           perl:clipboard:paste
-URxvt.keysym.M-C-v:         perl:clipboard:paste_escaped
+URxvt.keysym.C-C:           perl:clipboard:copy
+URxvt.keysym.C-V:           perl:clipboard:paste

@@ -65,9 +65,6 @@ URxvt*preeditType:          OverTheSpot
 ! #include ".Xresources.d/solarized-dark"
 #include ".Xresources.d/solarized-light"
 
-! URxvt*shading:              20
-! URxvt*inheritPixmap:        True
-
 !-------------------------------------------------------------------------------
 ! https://github.com/muennich/urxvt-perls
 !-------------------------------------------------------------------------------

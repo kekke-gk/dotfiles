@@ -1,9 +1,6 @@
 ## Web Browser
 google-chrome
 chromium
-vivaldi
-firefox
-firefox-i18n-ja
 
 ## Input Method
 uim
@@ -18,9 +15,6 @@ lain-git
 xscreensaver
 xss-lock
 
-## Display Manager
-lightdm
-
 ## Terminal
 ### Terminal Emulator
 rxvt-unicode
@@ -33,7 +27,7 @@ ttf-ricty
 ttf-ubuntu-font-family
 
 ## Text Editor
-leafpad
+atom
 gvim
 haroopad
 
@@ -50,15 +44,6 @@ gdb
 
 ### Java
 jdk8-openjdk
-
-### Android
-libmtp
-gvfs-mtp
-gvfs-gphoto2
-android-sdk
-android-sdk-platform-tools
-android-sdk-build-tools
-android-studio
 
 ### Python
 python-pip
@@ -79,7 +64,6 @@ viewnior
 vlc
 kazam
 audacity
-blender
 
 ## File Manager
 nemo
@@ -116,17 +100,10 @@ texlive-langjapanese
 ## Display
 arandr
 
-## Printer
-cups
-
-## FTP
-filezilla
-
 ## Command
 rcm
 curl
 xclip
-scrot
 networkmanager
 network-manager-applet
 xorg-xev
@@ -134,9 +111,9 @@ zip
 unzip
 p7zip
 net-tools
+filezilla
+openssh
 
-## Message
-skype
 
 avahi
 nss-mdns
@@ -153,15 +130,8 @@ lib32-libcanberra-pulse
 
 dosfstools
 
-openssh
 
 nfs-utils
 
 tlp
 
-###### BitTorrent
-###### Sublime
-###### Wireshark
-###### BurpSuite
-###### XMind
-###### wxMaxima

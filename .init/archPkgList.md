@@ -8,6 +8,8 @@ mozc
 uim-mozc
 
 ## Window Manager
+xorg-server
+xorg-xinit
 awesome
 lain-git
 
@@ -39,7 +41,7 @@ linux_headers
 vagrant
 
 ### C
-gcc-multilib
+gcc
 gdb
 
 ### Java
@@ -56,7 +58,14 @@ ruby
 ### Processing
 processing
 
-## Video / Audio / Picture / 3D
+## Sound
+alsa-plugins
+alsa-utils
+pulseaudio
+pulseaudio-alsa
+pulseaudio-ctl
+
+## Video / Audio / Picture
 gimp
 imagemagick
 inkscape
@@ -91,6 +100,7 @@ libreoffice-fresh
 
 ## Cloud Storage
 dropbox
+nemo-dropbox
 megasync
 
 ## TeX
@@ -107,31 +117,27 @@ xclip
 networkmanager
 network-manager-applet
 xorg-xev
+#~~xorg-xbacklight~~
+light
 zip
 unzip
 p7zip
 net-tools
 filezilla
 openssh
+fzf
+pkgstats
 
+## Bluetooth
+blueman
+pulseaudio-bluetooth
 
-avahi
-nss-mdns
+## Kernel
+linux-zen
+linux-zen-header
 
-alsa-plugins
-alsa-utils
-lib32-alsa-plugins
-
-pulseaudio
-pulseaudio-alsa
-pulseaudio-ctl
-lib32-libpulse
-lib32-libcanberra-pulse
-
-dosfstools
-
-
-nfs-utils
-
-tlp
+#nss-mdns
+#dosfstools
+#nfs-utils
+#tlp
 

@@ -56,6 +56,7 @@ end
 run_once("urxvtd")
 run_once("unclutter -root")
 run_once("nm-applet")
+run_once("systemctl --user start dropbox")
 -- }}}
 
 -- {{{ Variable definitions
@@ -379,12 +380,18 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "r", function () mypromptbox[1]:run() end),
 
     -- Brightness
-    awful.key({                            }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc  3") end),
-    awful.key({                            }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec  3") end),
-    awful.key({ altkey, "Control"          }, "Up",                    function () awful.util.spawn("xbacklight -inc  1") end),
-    awful.key({ altkey, "Control"          }, "Down",                  function () awful.util.spawn("xbacklight -dec  1") end),
-    awful.key({ altkey, "Control", "Shift" }, "Up",                    function () awful.util.spawn("xbacklight -inc 10") end),
-    awful.key({ altkey, "Control", "Shift" }, "Down",                  function () awful.util.spawn("xbacklight -dec 10") end)
+    awful.key({                            }, "XF86MonBrightnessUp",   function () awful.util.spawn("light -A  3") end),
+    awful.key({                            }, "XF86MonBrightnessDown", function () awful.util.spawn("light -U  3") end),
+    awful.key({ altkey, "Control"          }, "Up",                    function () awful.util.spawn("light -A  1") end),
+    awful.key({ altkey, "Control"          }, "Down",                  function () awful.util.spawn("light -U  1") end),
+    awful.key({ altkey, "Control", "Shift" }, "Up",                    function () awful.util.spawn("light -A 10") end),
+    awful.key({ altkey, "Control", "Shift" }, "Down",                  function () awful.util.spawn("light -U 10") end)
+    -- awful.key({                            }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc  3") end),
+    -- awful.key({                            }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec  3") end),
+    -- awful.key({ altkey, "Control"          }, "Up",                    function () awful.util.spawn("xbacklight -inc  1") end),
+    -- awful.key({ altkey, "Control"          }, "Down",                  function () awful.util.spawn("xbacklight -dec  1") end),
+    -- awful.key({ altkey, "Control", "Shift" }, "Up",                    function () awful.util.spawn("xbacklight -inc 10") end),
+    -- awful.key({ altkey, "Control", "Shift" }, "Down",                  function () awful.util.spawn("xbacklight -dec 10") end)
 )
 
 clientkeys = awful.util.table.join(

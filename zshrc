@@ -5,12 +5,12 @@ bindkey -e # emacs
 # Prompt
 PROMPT='[%n@%m]$ '
 RPROMPT='[%d]'
-SPROMPT="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # home end delete
 bindkey "^[[H"  beginning-of-line
 bindkey "^[[F"  end-of-line
 bindkey "^[[3~" delete-char
+bindkey "^U" backward-kill-line
 
 # History
 HISTFILE=~/.zsh_history
@@ -32,6 +32,7 @@ setopt nolistbeep
 # Complement
 setopt correct
 autoload -U compinit; compinit # 補完機能を有効にする
+# setopt complete_aliases
 # autoload predict-on; predict-on
 setopt auto_list               # 補完候補を一覧で表示する(d)
 setopt auto_menu               # 補完キー連打で補完候補を順に表示する(d)
@@ -64,6 +65,8 @@ alias tmux="TERM=screen-256color-bce tmux"
 g+() { g++ -o "${1%.*}.out" "$1"; }
 gc() { gcc -o "${1%.*}.out" "$1"; }
 
+# alias -s txt=cat
+
 export GTK_IM_MODULE=uim
 export QT_IM_MODULE=uim
 export XMODIFIERS="@im=uim"
@@ -75,7 +78,6 @@ PATH+=:"$(ruby -e 'print Gem.user_dir')/bin"
 export PATH
 export XDG_CONFIG_HOME=$HOME/.config
 export LANG=en_US.UTF-8
-# export LANG=ja_JP.UTF-8
 
 # yaourt
 export VISUAL=vim
@@ -97,3 +99,23 @@ if [ -n "$LS_COLORS" ]; then
 fi
 
 export UNIV=~/Dropbox/school/UEC/3/Kouki
+
+# [[ -z "$TMUX" && ! -z "$PS1" ]] && exec tmux -2
+
+if [[ `tty` =~ .*pts.* && -z "$TMUX" && ! -z "$PS1" ]]; then
+    ID="`tmux ls`"
+    if [[ -z "$ID" ]]; then
+        exec tmux -2
+    else
+        cns="Create New Session"
+        ID="${cns}:\n$ID"
+        ID="`echo $ID | fzf | cut -d: -f1`"
+        if [[ "$ID" == "${cns}" ]]; then
+            exec tmux -2
+        elif [[ -n "$ID" ]]; then
+            exec tmux -2 attach-session -t "$ID"
+        else
+            :
+        fi
+    fi
+fi

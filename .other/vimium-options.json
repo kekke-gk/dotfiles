@@ -1,0 +1,70 @@
+{
+  "settingsVersion": "1.63.3",
+  "exclusionRules": [
+    {
+      "pattern": "https?://www.freeriderhd.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.freeriderhd.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://w10.oroti.net/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://w10.oroti.net/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://typing-tube.net/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://diep.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://xythos.tokyo-ct.ac.jp/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.frogpad.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.italab.inf.uec.ac.jp/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.e-typing.ne.jp/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://surviv.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://nextframe.jp/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "map H goBack\nmap L goForward\nmap h previousTab\nmap l nextTab\nmap F LinkHints.activateMode\nmap f LinkHints.activateModeToOpenInNewTab\nmap O Vomnibar.activate\nmap o Vomnibar.activateInNewTab\nmap B Vomnibar.activateBookmarks\nmap b Vomnibar.activateBookmarksInNewTab",
+  "linkHintCharacters": "aoeuhtns",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,→,»,≫,>>,次,続き,ＮＥＸＴ",
+  "previousPatterns": "prev,previous,back,older,<,←,«,≪,<<,前,戻る,ＢＡＣＫ",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": false,
+  "searchEngines": "w: http://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: http://www.google.com/search?q=%s Google\n# l: http://www.google.com/search?q=%s&btnI I'm feeling lucky...\ny: http://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: http://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+}

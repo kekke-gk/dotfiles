@@ -20,6 +20,7 @@ call dein#add('Shougo/neosnippet')
 call dein#add('Shougo/neosnippet-snippets')
 " call dein#add('tpope/vim-surround')
 call dein#add('Townk/vim-autoclose')
+call dein#add('scrooloose/syntastic')
 
 " C / C++
 call dein#add('justmao945/vim-clang', {'on_ft': ['c', 'cpp']})
@@ -32,11 +33,12 @@ call dein#add('jelera/vim-javascript-syntax', {'on_ft': 'javascript'})
 
 " Python
 call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
-" call dein#add('kevinw/pyflakes-vim', {'on_ft': 'python'})
+call dein#add('kevinw/pyflakes-vim', {'on_ft': 'python'})
 " call dein#add('nvie/vim-flake8', {'on_ft': 'python'})
+call dein#add('Vimjas/vim-python-pep8-indent', {'on_ft': 'python'})
 
 " LaTeX
-" call dein#add('vim-latex/vim-latex', {'on_ft': 'tex'})
+call dein#add('vim-latex/vim-latex', {'on_ft': 'tex'})
 
 call dein#end()
 call dein#save_state()
@@ -49,10 +51,18 @@ filetype plugin indent on
 
 
 "---------------------------------------------------------------------------
+" syntastic
+"
+
+let g:syntastic_python_checkers = ["flake8"]
+nnoremap <leader>s :SyntasticCheck<cr>
+
+
+"---------------------------------------------------------------------------
 " jedi-vim
 "
 
-autocmd FileType python setlocal completeopt-=preview
+" autocmd FileType python setlocal completeopt-=preview
 
 
 "---------------------------------------------------------------------------

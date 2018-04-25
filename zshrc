@@ -5,6 +5,7 @@ bindkey -e # emacs
 # Prompt
 PROMPT='[%n@%m]$ '
 RPROMPT='[%d]'
+SPROMPT="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # home end delete
 bindkey "^[[H"  beginning-of-line
@@ -86,6 +87,9 @@ export EDITOR=vim
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export CLASSPATH=""
 
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
+
 if [ -f ~/.dircolors ]; then
     if type dircolors > /dev/null 2>&1; then
         eval $(dircolors ~/.dircolors)
@@ -98,9 +102,7 @@ if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
-export UNIV=~/Dropbox/school/UEC/3/Kouki
-
-# [[ -z "$TMUX" && ! -z "$PS1" ]] && exec tmux -2
+export LAB=~/Dropbox/School/UEC/Lab
 
 if [[ `tty` =~ .*pts.* && -z "$TMUX" && ! -z "$PS1" ]]; then
     ID="`tmux ls`"

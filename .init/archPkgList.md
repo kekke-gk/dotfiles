@@ -49,8 +49,10 @@ jdk8-openjdk
 
 ### Python
 python-pip
+python-virtualenvwrapper
 lapack
 gcc-fortran
+tk
 
 ### Ruby
 ruby

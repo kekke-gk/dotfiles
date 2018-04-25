@@ -376,8 +376,8 @@ globalkeys = awful.util.table.join(
     -- awful.key({ modkey }, "g", function () awful.util.spawn(graphics) end),
 
     -- Prompt
-    -- awful.key({ modkey }, "r", function () mypromptbox[awful.screen.focused().index]:run() end),
-    awful.key({ modkey }, "r", function () mypromptbox[1]:run() end),
+    awful.key({ modkey }, "r", function () mypromptbox[awful.screen.focused().index]:run() end),
+    -- awful.key({ modkey }, "r", function () mypromptbox[1]:run() end),
 
     -- Brightness
     awful.key({                            }, "XF86MonBrightnessUp",   function () awful.util.spawn("light -A  3") end),

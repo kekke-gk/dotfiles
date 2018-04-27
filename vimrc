@@ -22,6 +22,7 @@ set undofile
 let mapleader = "\<Space>"
 set nocompatible
 set wildmenu
+set wildmode=longest:full,full
 set modeline
 set virtualedit=block
 set backspace=indent,eol,start

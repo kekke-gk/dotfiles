@@ -35,6 +35,7 @@ set secure
 set clipboard=unnamed,autoselect,unnamedplus
 set lazyredraw
 set switchbuf=useopen,usetab,newtab
+set timeoutlen=500
 
 
 "---------------------------------------------------------------------------
@@ -119,17 +120,15 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Emacs keybind
-" Move cursor on Insert Mode
-inoremap <C-b> <Left>
-inoremap <C-f> <Right>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
+" Move cursor on Insert Mode and CommandLine Mode
+noremap! <C-b> <Left>
+noremap! <C-f> <Right>
+noremap! <C-a> <Home>
+noremap! <C-e> <End>
 
-" Move cursor on Command Mode
-cnoremap <C-b> <Left>
-cnoremap <C-f> <Right>
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
+" Move cursor on CommandLine Mode
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
 
 " Move cursor on Visual Mode
 vnoremap <C-a> <Home>

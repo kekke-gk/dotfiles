@@ -1,0 +1,17 @@
+#!/usr/bin/sh
+
+ARRAY=()
+ARRAY2=()
+
+for num in {1..30}
+do
+    lp=$(printf "80%02d" $num)
+    rp=$(printf "650%02d" $num)
+    gp=$(printf "gp%02d" $num)
+    ARRAY[num]="-L ${lp}:localhost:${rp}"
+    ARRAY2[num]="-L ${rp}:${gp}:8000"
+done
+
+ssh -t ${ARRAY[*]}  g1510176@sol.edu.cc.uec.ac.jp \
+ssh    ${ARRAY2[*]} gomi-k@im00.cs.uec.ac.jp
+

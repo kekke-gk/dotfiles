@@ -105,19 +105,19 @@ fi
 export LAB=~/Dropbox/School/UEC/Lab
 
 if [[ `tty` =~ .*pts.* && -z "$TMUX" && ! -z "$PS1" ]]; then
-    ID="`tmux ls`"
-    if [[ -z "$ID" ]]; then
+    ID="`tmux ls 2> /dev/null`"
+    # if [[ -z "$ID" ]]; then
+    #     exec tmux -2
+    # else
+    cns="Create New Session"
+    [[ -z "$ID" ]] && ID="${cns}:" || ID="${cns}:\n$ID"
+    ID="`echo $ID | fzf | cut -d: -f1`"
+    if [[ "$ID" == "${cns}" ]]; then
         exec tmux -2
+    elif [[ -n "$ID" ]]; then
+        exec tmux -2 attach-session -t "$ID"
     else
-        cns="Create New Session"
-        ID="${cns}:\n$ID"
-        ID="`echo $ID | fzf | cut -d: -f1`"
-        if [[ "$ID" == "${cns}" ]]; then
-            exec tmux -2
-        elif [[ -n "$ID" ]]; then
-            exec tmux -2 attach-session -t "$ID"
-        else
-            :
-        fi
+        :
     fi
+    # fi
 fi

@@ -34,7 +34,7 @@ URxvt.allow_bold:           true
 ! URxvt*bolditalicFont:       xft:Ubuntu Mono:          bold:italic:size=10.5:antialias=true
 
 URxvt*font:                 xft:Ricty:                      size=10.5:antialias=true,\
-                            xft:Ubuntu Mono:                size=10.5:antialias=true
+                            xft:UbuntuMono Nerd Font:                size=10.5:antialias=true
 
 
 ! Fix font space

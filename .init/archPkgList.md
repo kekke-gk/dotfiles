@@ -48,8 +48,8 @@ gdb
 jdk8-openjdk
 
 ### Python
-python-pip
-python-virtualenvwrapper
+# python-pip
+# python-virtualenvwrapper
 lapack
 gcc-fortran
 tk
@@ -142,4 +142,4 @@ linux-zen-header
 #dosfstools
 #nfs-utils
 #tlp
-
+deepin-screenshot

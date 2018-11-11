@@ -361,6 +361,11 @@ globalkeys = awful.util.table.join(
             os.execute(string.format("amixer set %s 1%%-", volumewidget.channel))
             volumewidget.update()
         end),
+    awful.key({ }, "XF86AudioMute",
+        function ()
+            os.execute(string.format("amixer set %s toggle", volumewidget.channel))
+            volumewidget.update()
+        end),
     awful.key({ altkey }, "m",
         function ()
             os.execute(string.format("amixer set %s toggle", volumewidget.channel))

@@ -69,8 +69,8 @@ URxvt*imLocale:             en_US.UTF-8
 URxvt*preeditType:          OverTheSpot
 
 ! Source http://ethanschoonover.com/solarized
-! #include ".Xresources.d/solarized-dark"
-#include ".Xresources.d/solarized-light"
+#include ".Xresources.d/solarized-dark"
+! #include ".Xresources.d/solarized-light"
 
 !-------------------------------------------------------------------------------
 ! https://github.com/muennich/urxvt-perls

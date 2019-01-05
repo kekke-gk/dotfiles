@@ -205,8 +205,8 @@ endtry
 "
 
 syntax enable
-" set background=dark
-set background=light
+set background=dark
+" set background=light
 colorscheme solarized
 
 if g:colors_name == 'solarized'

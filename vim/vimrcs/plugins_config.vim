@@ -36,6 +36,7 @@ call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
 call dein#add('kevinw/pyflakes-vim', {'on_ft': 'python'})
 call dein#add('nvie/vim-flake8', {'on_ft': 'python'})
 call dein#add('Vimjas/vim-python-pep8-indent', {'on_ft': 'python'})
+call dein#add('plytophogy/vim-virtualenv', {'on_ft': 'python'})
 
 " LaTeX
 call dein#add('vim-latex/vim-latex', {'on_ft': 'tex'})

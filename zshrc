@@ -121,3 +121,7 @@ if [[ `tty` =~ .*pts.* && -z "$TMUX" && ! -z "$PS1" ]]; then
     fi
     # fi
 fi
+
+function vim {
+    PYTHONPATH=`python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"` /usr/bin/vim "$@"
+}

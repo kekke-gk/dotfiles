@@ -84,6 +84,86 @@
                     ]
                 }
             ]
+        },
+        {
+            "description": "Switch Zenkaku-Hankaku with period-comma2(for QWERTY)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "period",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_kana"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "comma",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Switch Zenkaku-Hankaku with period-comma2(for Dvorak)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "e",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_kana"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "w",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

@@ -1,17 +1,16 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 ARRAY=()
 ARRAY2=()
 
-for num in {1..30}
+for num in {1..35}
 do
     lp=$(printf "80%02d" $num)
-    rp=$(printf "650%02d" $num)
+    lp2=$(printf "60%02d" $num)
     gp=$(printf "gp%02d" $num)
-    ARRAY[num]="-L ${lp}:localhost:${rp}"
-    ARRAY2[num]="-L ${rp}:${gp}:8000"
+    ARRAY[num]="-L ${lp}:${gp}:8000"
+    ARRAY2[num]="-L ${lp2}:${gp}:6006"
 done
 
-ssh -t ${ARRAY[*]}  g1510176@sol.edu.cc.uec.ac.jp \
-ssh    ${ARRAY2[*]} gomi-k@im00.cs.uec.ac.jp
+ssh -t ${ARRAY[*]} ${ARRAY2[*]} im00
 

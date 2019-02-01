@@ -20,7 +20,7 @@ SAVEHIST=10000
 setopt hist_ignore_dups
 setopt share_history
 setopt auto_cd
-function chpwd() { ls -G --color=auto }
+# function chpwd() { ls -G --color=auto }
 setopt auto_pushd
 setopt pushd_ignore_dups
 bindkey '^P' history-beginning-search-backward
@@ -48,7 +48,7 @@ setopt ignore_eof
 stty stop undef
 
 # alias
-alias ls='ls --color=auto'
+alias ls='gls --color=auto'
 alias ll='ls -Al'
 alias la='ls -A'
 alias l='ls -CF'
@@ -58,10 +58,12 @@ alias grep='grep --color'
 alias vi='vim'
 alias xclip='xclip -sel clip'
 # alias open='gnome-open'
-alias open='xdg-open'
+# alias open='xdg-open'
 alias view='vim -R'
 alias pstree="pstree -A"
 alias tmux="TERM=screen-256color-bce tmux"
+
+function chpwd() { ls -G --color=auto }
 
 g+() { g++ -o "${1%.*}.out" "$1"; }
 gc() { gcc -o "${1%.*}.out" "$1"; }
@@ -76,6 +78,7 @@ export XMODIFIERS="@im=uim"
 # export XMODIFIERS="@im=ibus"
 
 PATH+=:"$(ruby -e 'print Gem.user_dir')/bin"
+PATH+=:"$HOME/.local/bin"
 export PATH
 export XDG_CONFIG_HOME=$HOME/.config
 export LANG=en_US.UTF-8
@@ -87,8 +90,9 @@ export EDITOR=vim
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export CLASSPATH=""
 
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+# export WORKON_HOME=~/.virtualenvs
+export WORKON_HOME=~/.venv
+source /usr/local/bin/virtualenvwrapper.sh
 
 if [ -f ~/.dircolors ]; then
     if type dircolors > /dev/null 2>&1; then
@@ -122,6 +126,6 @@ if [[ `tty` =~ .*pts.* && -z "$TMUX" && ! -z "$PS1" ]]; then
     # fi
 fi
 
-function vim {
-    PYTHONPATH=`python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"` /usr/bin/vim "$@"
-}
+# function vim {
+#     PYTHONPATH=`python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"` /usr/bin/vim "$@"
+# }

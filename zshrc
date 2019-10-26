@@ -4,7 +4,7 @@ bindkey -e # emacs
 
 # Prompt
 PROMPT='[%n@%m]$ '
-RPROMPT='[%d]'
+RPROMPT='[%~]'
 SPROMPT="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # home end delete

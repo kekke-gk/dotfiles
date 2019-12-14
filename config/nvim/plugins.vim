@@ -7,7 +7,8 @@ Plug 'tomtom/tcomment_vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'itchyny/lightline.vim'
 Plug 'Townk/vim-autoclose'
-
+Plug 'scrooloose/nerdtree'
+Plug 'simeji/winresizer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -141,3 +142,10 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+"---------------------------------------------------------------------------
+" winresizer
+"
+
+let g:winresizer_start_key = '<C-T>'

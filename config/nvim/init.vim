@@ -37,6 +37,7 @@ set lazyredraw
 set switchbuf=useopen,usetab,newtab
 set timeoutlen=500
 set iskeyword-=_
+set guicursor=
 
 
 "---------------------------------------------------------------------------
@@ -219,3 +220,4 @@ if g:colors_name == 'solarized'
     let g:solarized_contrast='normal'
     let g:solarized_visibility='normal'
 endif
+

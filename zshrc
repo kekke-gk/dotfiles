@@ -20,7 +20,6 @@ SAVEHIST=10000
 setopt hist_ignore_dups
 setopt share_history
 setopt auto_cd
-# function chpwd() { ls -G --color=auto }
 setopt auto_pushd
 setopt pushd_ignore_dups
 bindkey '^P' history-beginning-search-backward
@@ -57,11 +56,10 @@ alias mv='mv -i'
 alias grep='grep --color'
 alias vi='vim'
 alias xclip='xclip -sel clip'
-# alias open='gnome-open'
-# alias open='xdg-open'
 alias view='vim -R'
 alias pstree="pstree -A"
 alias tmux="TERM=screen-256color-bce tmux"
+board() {ssh -L "6006:$1:6006" $1}
 
 function chpwd() { ls -G --color=auto }
 
@@ -90,9 +88,7 @@ export EDITOR=vim
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export CLASSPATH=""
 
-# export WORKON_HOME=~/.virtualenvs
-export WORKON_HOME=~/.venv
-source /usr/local/bin/virtualenvwrapper.sh
+fpath=(~/.zsh/completion $fpath)
 
 if [ -f ~/.dircolors ]; then
     if type dircolors > /dev/null 2>&1; then
@@ -106,7 +102,8 @@ if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
-export LAB=~/Dropbox/School/UEC/Lab
+# haskell
+source /Users/kekke/.ghcup/env
 
 if [[ `tty` =~ .*pts.* && -z "$TMUX" && ! -z "$PS1" ]]; then
     ID="`tmux ls 2> /dev/null`"
@@ -126,6 +123,3 @@ if [[ `tty` =~ .*pts.* && -z "$TMUX" && ! -z "$PS1" ]]; then
     # fi
 fi
 
-# function vim {
-#     PYTHONPATH=`python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"` /usr/bin/vim "$@"
-# }

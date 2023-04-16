@@ -85,7 +85,9 @@ export LANG=en_US.UTF-8
 export VISUAL=vim
 export EDITOR=vim
 
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+# export JAVA_HOME=/Users/kekke/Library/Java/JavaVirtualMachines/openjdk-15/Contents/Home
+export JAVA_HOME=/Users/kekke/Library/Java/JavaVirtualMachines/openjdk-17/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=""
 
 fpath=(~/.zsh/completion $fpath)
@@ -103,7 +105,7 @@ if [ -n "$LS_COLORS" ]; then
 fi
 
 # haskell
-source /Users/kekke/.ghcup/env
+# source /Users/kekke/.ghcup/env
 
 if [[ `tty` =~ .*pts.* && -z "$TMUX" && ! -z "$PS1" ]]; then
     ID="`tmux ls 2> /dev/null`"
@@ -138,4 +140,19 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+[[ -z $TMUX ]] || conda deactivate; conda activate base
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kekke/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kekke/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kekke/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kekke/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+alias git-https="git remote set-url origin https://github.com/$(git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
+alias git-ssh="  git remote set-url origin git@github.com:$(    git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
+
+export PATH=$PATH:/Users/kekke/git/browser/depot_tools
 

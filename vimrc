@@ -32,10 +32,11 @@ set scrolloff=8
 set splitbelow
 set splitright
 set secure
-set clipboard=unnamed,autoselect,unnamedplus
+set clipboard=unnamed,unnamedplus
 set lazyredraw
 set switchbuf=useopen,usetab,newtab
 set timeoutlen=500
+set iskeyword-=_
 
 
 "---------------------------------------------------------------------------

@@ -54,9 +54,9 @@ alias l='ls -CF'
 alias cp='cp -i'
 alias mv='mv -i'
 alias grep='grep --color'
-alias vi='vim'
+alias vi='nvim'
 alias xclip='xclip -sel clip'
-alias view='vim -R'
+alias view='nvim -R'
 alias pstree="pstree -A"
 alias tmux="TERM=screen-256color-bce tmux"
 board() {ssh -L "6006:$1:6006" $1}
@@ -82,8 +82,8 @@ export XDG_CONFIG_HOME=$HOME/.config
 export LANG=en_US.UTF-8
 
 # yaourt
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nvim
+export EDITOR=nvim
 
 # export JAVA_HOME=/Users/kekke/Library/Java/JavaVirtualMachines/openjdk-15/Contents/Home
 export JAVA_HOME=/Users/kekke/Library/Java/JavaVirtualMachines/openjdk-17/Contents/Home

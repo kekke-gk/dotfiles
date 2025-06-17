@@ -183,3 +183,6 @@ export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+# To show japanese tex in manim
+export LIBGS=/opt/homebrew/lib/libgs.dylib
+

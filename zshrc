@@ -54,6 +54,7 @@ alias l='ls -CF'
 alias mv='mv -i'
 alias grep='grep --color'
 alias vi='nvim'
+alias vim='nvim'
 alias xclip='xclip -sel clip'
 alias view='nvim -R'
 alias pstree="pstree -A"

@@ -178,3 +178,8 @@ alias git-ssh="  git remote set-url origin git@github.com:$(    git remote get-u
 
 export PATH=$PATH:/Users/kekke/git/browser/depot_tools
 
+# Coreutils
+export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH
+
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+

@@ -186,3 +186,6 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # To show japanese tex in manim
 export LIBGS=/opt/homebrew/lib/libgs.dylib
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

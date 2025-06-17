@@ -107,10 +107,10 @@ export LANG=en_US.UTF-8
 export VISUAL=nvim
 export EDITOR=nvim
 
-# export JAVA_HOME=/Users/kekke/Library/Java/JavaVirtualMachines/openjdk-15/Contents/Home
-export JAVA_HOME=/Users/kekke/Library/Java/JavaVirtualMachines/openjdk-17/Contents/Home
+export JAVA_HOME=/opt/homebrew/opt/openjdk@21
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=""
+export CPPFLAGS="-I$JAVA_HOME/include"
 
 fpath=(~/.zsh/completion $fpath)
 

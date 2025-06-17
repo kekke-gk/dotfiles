@@ -4,7 +4,7 @@
 
 call plug#begin('~/.vim/plugged')
 Plug 'tomtom/tcomment_vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'maxmx03/solarized.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'scrooloose/nerdtree'

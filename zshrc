@@ -60,6 +60,28 @@ alias view='nvim -R'
 alias pstree="pstree -A"
 alias tmux="TERM=screen-256color-bce tmux"
 board() {ssh -L "6006:$1:6006" $1}
+forward() {
+    if [[ -z $1 ]]; then
+        echo "Usage: forward <host> [port1 port2 port3 ...]"
+        return 1
+    fi
+
+    local host=$1
+    shift  # 残りの引数をポート番号として処理
+
+    # デフォルト: ポート指定がなければ6006, 8888
+    if [[ $# -eq 0 ]]; then
+        set -- 6006 8888
+    fi
+
+    local port_args=()
+
+    for port in $@; do
+        port_args+=("-L" "${port}:localhost:${port}")
+    done
+
+    ssh ${port_args[@]} ${host}
+}
 
 function chpwd() { ls -G --color=auto }
 

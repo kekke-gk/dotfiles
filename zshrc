@@ -127,7 +127,7 @@ if [ -n "$LS_COLORS" ]; then
 fi
 
 # haskell
-# source /Users/kekke/.ghcup/env
+[ -f "/Users/kekke/.ghcup/env" ] && . "/Users/kekke/.ghcup/env" # ghcup-env
 
 if [[ `tty` =~ .*pts.* && -z "$TMUX" && ! -z "$PS1" ]]; then
     ID="`tmux ls 2> /dev/null`"

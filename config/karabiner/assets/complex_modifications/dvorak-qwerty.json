@@ -150,6 +150,31 @@
                     ]
                 }
             ]
+        },
+        {
+            "description": "Enable Command-k shortcuts on Dvorak",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "period",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code":  "k",
+                            "modifiers": ["left_command"]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

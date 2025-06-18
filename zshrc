@@ -173,8 +173,12 @@ if [ -f '/Users/kekke/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users
 if [ -f '/Users/kekke/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kekke/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 
-alias git-https="git remote set-url origin https://github.com/$(git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
-alias git-ssh="  git remote set-url origin git@github.com:$(    git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
+git-https() {
+    git remote set-url origin https://github.com/$(git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')
+}
+git-ssh() {
+    git remote set-url origin git@github.com:$(    git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')
+}
 
 export PATH=$PATH:/Users/kekke/git/browser/depot_tools
 
